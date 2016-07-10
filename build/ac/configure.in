@@ -1,0 +1,355 @@
+
+
+AC_INIT
+AC_CANONICAL_SYSTEM
+AM_INIT_AUTOMAKE(reaper, 0.98.2)
+
+AM_CONFIG_HEADER(config.h)
+
+AC_DEFUN(APPEND, [ $1="$$1 $2" ])
+
+AC_DEFUN(CHECK_LIB, [
+    tmp1="$CFLAGS $6"
+    tmp2="$LIBS $5"
+    case $target in
+        *msysm*|*mingw*)
+            AC_TRY_COMPILE([#include <windows.h>
+$1], $2, $3, $4)
+            ;;
+        *)
+            AC_TRY_COMPILE($1, $2, $3, $4)
+            ;;
+    esac
+    CFLAGS="$tmp1"
+    LIBS="$tmp2"
+])
+
+CFLAGS="$CFLAGS -Wall -W"
+CXXFLAGS="$CXXFLAGS -Wall -W -Wno-unused -Wno-non-virtual-dtor -Wno-sign-compare"
+
+APPEND(CFLAGS, -ansi)
+APPEND(CXXFLAGS, -ansi)
+
+opt="-O2"
+AC_ARG_ENABLE(debug, [  --enable-debug          Include debug symbols (big objects)], opt="-g")
+AC_ARG_ENABLE(noopt, [  --enable-noopt          No optimization (fast compilation)], opt="")
+AC_ARG_ENABLE(opt,   [  --enable-opt=arch       Turn on more optimizations for <arch> (pentiumpro default, slow compilation)],
+    opt="-O6 -fexpensive-optimizations"
+    if test "x$enable_opt" = "xyes" ; then
+      APPEND(opt, -mcpu=pentiumpro -march=pentiumpro)
+    else
+      APPEND(opt, -mcpu=$enable_opt -march=$enable_opt)
+    fi
+    )
+
+APPEND(CFLAGS, $opt)
+APPEND(CXXFLAGS, $opt)
+
+
+AC_PROG_CC
+AM_PROG_CC_C_O
+AC_PROG_CXX
+AC_PROG_LN_S
+AM_PROG_LIBTOOL
+AC_PROG_INSTALL
+
+AC_TRY_RUN([int main () { long l = 1; exit *((char*)&l); }], [AC_DEFINE(WORDS_BIGENDIAN, 1, [big endian?])], [true], [true])
+
+
+
+dnl Some systems doesn't look here by default..
+dnl But perhaps it's a bad idea to always include them?
+case $target in
+ *msys*|*mingw*)
+    ;;
+ *)
+    APPEND(CFLAGS, -I/usr/local/include)
+    APPEND(CXXFLAGS, -I/usr/local/include)
+    APPEND(LDFLAGS, -L/usr/local/lib)
+esac
+
+
+dnl Default to /usr/X11R6
+case "x$with_x_includes" in
+ xNONE|x)
+    APPEND(X11_FLAGS, -I/usr/X11R6/include)
+    ;;
+ *) APPEND(X11_FLAGS, -I$with_x_includes)
+    ;;
+esac
+
+case "x$with_x_libraries" in
+ xNONE|x)
+    X11_LIBS="-L/usr/X11R6/lib"
+    ;;
+ *) X11_LIBS="-L$with_x_libraries"
+    ;;
+esac
+
+
+
+tmp1="$CFLAGS"; tmp2="$LIBS"; CFLAGS="$CFLAGS $X11_FLAGS"; LIBS="$LIBS $X11_LIBS"
+AC_CHECK_LIB(X11, XCreateWindow,
+    have_X11="yes"; gfx_plugins="$gfx_plugins gfx_x11.la"; event_plugins="$event_plugins event_x11.la";
+    APPEND(X11_LIBS, -lX11 -lXext))
+CFLAGS="$tmp1"; LIBS="$tmp2"
+
+AC_CHECK_LIB(m, sin)
+AC_CHECK_LIB(pthread, pthread_create)
+AC_CHECK_LIB(lthread, pthread_create)
+
+
+tmp1="$LIBS"; LIBS="$LIBS $X11_LIBS"
+case $target in
+ *msys*|*mingw*)
+        AC_TRY_COMPILE([#include <windows.h>
+#include <GL/gl.h>], [glEnable(GL_TEXTURE_2D)], APPEND(GL_LIBS, -lopengl32),  AC_MSG_ERROR("OpenGL is required!"))
+	AC_TRY_COMPILE([#include <windows.h>
+#include <GL/gl.h>], [gluOrtho2D(1.0,1.0,1.0,1.0);], APPEND(GL_LIBS, -lglu32), AC_MSG_ERROR("OpenGL is required!"))
+	;;
+ *)
+	AC_CHECK_LIB(GL,  glEnable,   APPEND(GL_LIBS, -lGL),  AC_MSG_ERROR("OpenGL is required!"))
+	AC_CHECK_LIB(GLU, gluOrtho2D, APPEND(GL_LIBS, -lGLU), AC_MSG_ERROR("OpenGL is required!"), -lGL)
+	;;
+esac
+LIBS="$tmp1"
+
+tmp1="$LIBS"
+LIBS="$LIBS $X11_LIBS $GL_LIBS"
+AC_TRY_COMPILE([#include <GL/gl.h>],
+     [PFNGLLOCKARRAYSEXTPROC foo; ], , [AC_DEFINE(NO_VERTEX_ARRAY_TYPEDEFS, 1, [No vertex array typedefs])])
+AC_TRY_COMPILE([#include <GL/gl.h>
+                #include <GL/glx.h>],
+                [GLXFBConfig fbconfig;], , [AC_DEFINE(NO_GLXFBCONFIG, 1, [No GLXFBConfig typedef])])
+AC_LANG_CPLUSPLUS
+AC_TRY_COMPILE([#define GL_EXT_compiled_vertex_array 1
+                #include <GL/gl.h>],
+                [glLockArraysEXT(1,2);], , [AC_DEFINE(NO_VERTEX_ARRAY_PROTOTYPES, 1, [Unconditionally defined vertexarray prototypes])])
+AC_LANG_C
+LIBS="$tmp1"
+
+AC_TRY_COMPILE([#include <GL/glx.h>],
+               [glXGetCurrentDisplay();], , [AC_DEFINE(NO_GLXGETCURRENTDISPLAY, 1, [Old glx version, faking it])])
+
+
+dnl AC_DEFINE(_POSIX_SOURCE, 1, [need some posix functions...])
+dnl AC_DEFINE(_POSIX_C_SOURCE, 199506L, [need some posix functions...])
+
+tmp="$CFLAGS"
+APPEND(CFLAGS, -D_POSIX_SOURCE -D_POSIX_C_SOURCE=199506L)
+AC_TRY_COMPILE([#include <time.h>],
+               [struct timespec ts;], , [AC_DEFINE(NO_TIME_H_TIMESPEC, 1, [struct timespec not defined])])
+
+APPEND(CFLAGS, "-Werror")
+AC_TRY_COMPILE([#include <time.h>],
+               [nanosleep(0, 0);], , [AC_DEFINE(NO_TIME_H_NANOSLEEP, 1, [no prototype for nanosleep])])
+CFLAGS="$tmp"
+
+AC_LANG_CPLUSPLUS
+AC_TRY_COMPILE([#include <iostream>], [typedef int streamsize;], [], [AC_DEFINE(NO_STREAMSIZE_IN_IOSTREAM, 1, [no streamsize defined in <iostream>])])
+AC_LANG_C
+
+AC_ARG_WITH(png-headers, [  --with-png-headers  where to find png headers],   APPEND(CFLAGS,-I$with_png_headers);APPEND(CXXFLAGS, -I$with_png_headers))
+AC_ARG_WITH(png-libs,    [  --with-png-libs     where to find png libraries], APPEND(LIBS, -L$with_png_libs))
+
+
+AC_CHECK_LIB(z, inflate)
+
+AC_TRY_COMPILE([#include <png.h>], , , [AC_MSG_ERROR(needs png headers)])
+
+AC_LANG_CPLUSPLUS
+AC_TRY_COMPILE([#include <ext/hash_map>], , [AC_DEFINE(HAVE_EXT_HASH_MAP, 1, [ext/hash_map])], [])
+AC_TRY_COMPILE([#include <hash_map>], , [AC_DEFINE(HAVE_HASH_MAP, 1, [hash_map])], [])
+AC_LANG_C
+
+AC_CHECK_LIB(png, png_error, , AC_MSG_ERROR([Png library needed!]))
+
+AC_CHECK_LIB(dl, dlopen)
+
+AC_ARG_WITH(openal-headers, [  --with-openal-headers   where to find openal headers],   OPENAL_FLAGS="-I$with_openal_headers")
+AC_ARG_WITH(openal-libs,    [  --with-openal-libs      where to find openal libraries], OPENAL_LIBS="-L$with_openal_libs")
+
+tmp1="$CFLAGS"
+tmp2="$LIBS"
+APPEND(CFLAGS, $OPENAL_FLAGS)
+APPEND(LIBS, $OPENAL_LIBS)
+AC_CHECK_LIB(openal, alcOpenDevice, use_openal="yes") 
+CFLAGS=$tmp1
+LIBS=$tmp2
+
+if test "x$use_openal" = "xyes" ; then
+    snd_plugins="$snd_plugins snd_openal.la"
+    APPEND(OPENAL_LIBS, -lopenal)
+fi
+AM_CONDITIONAL(OPENAL, test "x$use_openal" = "xyes"  )
+
+AC_ARG_WITH(stlport-headers, [  --with-stlport-headers  where to find stlport headers [/usr/include/stlport]],
+    ac_stlport_headers="-I$with_stlport_headers";test_stlport="yes", ac_stlport_headers="-I/usr/include/stlport" )
+
+AC_ARG_WITH(stlport-libs,    [  --with-stlport-libs     where to find stlport libraries],
+    ac_stlport_libs="-L$with_stlport_libs";test_stlport="yes")
+
+AC_ARG_WITH(stlport-libname, [  --with-stlport-libname  name of stlport library [stlport_gcc]],
+    ac_stlport_libname="-l$with_stlport_libname";test_stlport="yes", ac_stlport_libname="-lstlport_gcc")
+
+ac_cxx_version=`$CXX --version`
+
+use_stlport="no"
+
+if test "x$test_stlport" = "xyes" ; then
+  tmp1=$CXXFLAGS; tmp2=$LIBS
+  CXXFLAGS="-nostdinc++ $ac_stlport_headers -D_STLP_STRICT_ANSI $CXXFLAGS"
+  APPEND(LIBS, $ac_stlport_libs)
+  APPEND(LIBS, $ac_stlport_libname)
+  AC_MSG_CHECKING(stlport)
+  dnl AC_LANG_PUSH(C++)
+  AC_LANG_CPLUSPLUS
+  AC_TRY_RUN([#include <iostream>
+              int main() { std::cout << std::ends; return 0; }
+              ],
+      use_stlport="yes"
+      AC_MSG_RESULT(using $ac_stlport_headers),
+      AC_MSG_RESULT(no)
+      CXXFLAGS=$tmp1
+      LIBS=$tmp2
+      use_stlport="no",
+      use_stlport="yes")
+  AC_LANG_C
+fi
+
+if test "x$use_stlport" = "xno" ; then
+  ac_cxx_version=`$CXX --version`
+  case $ac_cxx_version in
+   egcs-* | 2.*) 
+     STL_INC_DIR="compat/oldgcc"
+     AC_SUBST(STL_INC_DIR)
+     APPEND(CXXFLAGS, [-I\$(rp_src_dir)/compat/oldgcc -ftemplate-depth-25])
+     AC_DEFINE(FIX_MISSING_STL_TRAITS, 1, [Fix incomplete stl])
+     AC_MSG_RESULT(overriding parts of the c++ standard library)
+     ;;
+   3.)
+     AC_MSG_RESULT(using the c++ standard library supplied with the compiler)
+     ;;
+  esac
+else
+    APPEND(CXXFLAGS, -DUSE_STLPORT)
+fi
+
+APPEND(CXXFLAGS, [-I\$(rp_src_dir)])
+
+tmp1="$LIBS"
+APPEND(LIBS, $X11_LIBS)
+AC_CHECK_LIB(Xxf86vm, XF86VidModeGetAllModeLines, have_xf86vm="yes";X11_LIBS_XF86VM="-lXxf86vm", [], -lX11 -lXmu)
+LIBS="$tmp1"
+
+
+snd_plugins="$snd_plugins snd_simple.la snd_dummy.la snd_wave.la"
+
+case "$target $ac_cxx_version" in
+ *-*-solaris*)
+    ;;
+ *egcs*)
+    ;;
+ *)
+    APPEND(snd_plugins, snd_mp3.la)
+    ;;
+esac
+
+AC_SUBST(gfx_plugins)
+AC_SUBST(event_plugins)
+AC_SUBST(snd_plugins)
+AC_SUBST(X11_LIBS)
+AC_SUBST(X11_LIBS_XF86VM)
+AC_SUBST(OPENAL_FLAGS)
+AC_SUBST(OPENAL_LIBS)
+
+dnl Checks for header files.
+AC_HEADER_STDC
+dnl AC_CHECK_HEADERS(limits.h sys/time.h unistd.h)
+
+case $target in
+    *msys*|*mingw*) ;;
+    *)
+    AC_TRY_COMPILE([#include <X11/X.h>],
+     [], [true] , [
+        APPEND(CFLAGS, -I/usr/X11R6/include)
+        APPEND(CXXFLAGS, -I/usr/X11R6/include)
+        AC_TRY_COMPILE([#include <X11/X.h>],
+            [], [true] , [
+                AC_MSG_ERROR("Needs X headers!")
+            ])
+     ])
+    ;;
+esac
+
+dnl Checks for typedefs, structures, and compiler characteristics.
+AC_TYPE_SIZE_T
+
+dnl Checks for library functions.
+dnl AC_TYPE_SIGNAL
+dnl AC_CHECK_FUNCS(gettimeofday select strstr)
+AC_CHECK_FUNC(gettimeofday)
+AC_CHECK_FUNC(snprintf)
+
+AC_CHECK_LIB(rt, sem_wait)
+AC_CHECK_LIB(c_r, sem_wait)
+
+
+case $target in
+    *msys*|*mingw*)
+        CHECK_LIB(#include <winsock.h>
+                , [socket(0,0,0); gethostbyname(0); ],
+                [have_socket="yes"; have_gethostbyname="yes"; have_hstrerror="yes"; NET_LIBS="$NET_LIBS -lwsock32"],
+                [], -lwsock32)
+        ;;
+    *)
+        AC_CHECK_FUNC(socket,        have_socket="yes")
+        AC_CHECK_FUNC(gethostbyname, have_gethostbyname="yes")
+        AC_CHECK_FUNC(hstrerror,     have_hstrerror="yes")
+        AC_CHECK_LIB(socket, socket,     have_socket="yes";        NET_LIBS="$NET_LIBS -lsocket")
+        AC_CHECK_LIB(nsl, gethostbyname, have_gethostbyname="yes"; NET_LIBS="$NET_LIBS -lnsl")
+        AC_CHECK_LIB(resolv, hstrerror,  have_hstrerror="yes";     NET_LIBS="$NET_LIBS -lresolv")
+        ;;
+esac
+
+
+if test "x$have_socket" = "x" ; then
+    AC_MSG_ERROR(["socket required but not found, update configure.in"])
+fi
+
+if test "x$have_hstrerror" = "x" ; then
+    AC_MSG_ERROR(["hstrerror required but not found, update configure.in"])
+fi
+
+if test "x$have_gethostbyname" = "x" ; then
+    AC_MSG_ERROR(["gethostbyname required but not found, update configure.in"])
+fi
+
+AC_SUBST(NET_LIBS)
+
+#Xsed="sed -e s/^X//"
+#LTLIBOBJS=`echo X"$LIBOBJS"| [$Xsed -e "s,\.[^.]* ,.lo ,g;s,\.[^.]*$,.lo,"]`
+#AC_SUBST(LTLIBOBJS)
+
+case $target in
+  *msys*|*mingw*)
+    THREAD_LIB=libconc_win32.la
+    ;;
+   *)
+    THREAD_LIB=libconc_pthreads.la
+    ;;
+esac
+
+AC_SUBST(THREAD_LIB)
+
+APPEND(LIBS, [$GL_LIBS $X11_LIBS -lstdc++])
+
+#AC_OUTPUT(Makefile ext/Makefile hw/Makefile)
+AC_OUTPUT(Makefile ext/Makefile ai/Makefile game/Makefile gfx/Makefile \
+          gfx/pm/Makefile gfx/shadow/Makefile gfx/cloud/Makefile os/Makefile \
+          os/snd/Makefile os/gfx/Makefile os/net/Makefile os/event/Makefile \
+          os/gl/Makefile msg/Makefile \
+          main/Makefile misc/Makefile net/Makefile res/Makefile phys/Makefile \
+          object/Makefile world/Makefile snd/Makefile public/Makefile \
+          public/prototype/Makefile)
+

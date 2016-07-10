@@ -1,0 +1,17 @@
+ship_thrusters = {
+    name =  "thrusters",
+    transform =  {0, 0, 0},
+    rotation =  {0, 0, 0, 1},
+    scale =  {1, 1, 1},
+    lod =  0,
+    subobjects =  { },
+    diffuse_color =  {0.4, 0.4, 0.4, 1},
+    ambient =  {0, 0, 0, 0},
+    emmision_color =  {0, 0, 0, 0},
+    specular_color =  {0, 0, 0, 1},
+    shininess =  0,
+    texture =  "",
+
+    mesh = "ship_thrusters"
+}
+

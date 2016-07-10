@@ -1,0 +1,17 @@
+tree1_leaves = {
+    name =  "leaves",
+    transform =  {0, 0, 0},
+    rotation =  {0, 0, 0, 1},
+    scale =  {5, 5, 5},
+    lod =  0,
+    subobjects =  { },
+    diffuse_color =  {1, 1, 1, 1},
+    ambient =  {0, 0, 0, 0},
+    emmision_color =  {0, 0, 0, 0},
+    specular_color =  {.5, .5, .5, 1},
+    shininess =  60,
+    texture =  "tree_leaf",
+
+    mesh = "tree1_leaves"
+}
+

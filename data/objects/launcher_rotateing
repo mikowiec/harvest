@@ -1,0 +1,18 @@
+launcher_rotating = {
+    name =  "rotating",
+    transform =  {0, 2.217, 0},
+    rotation =  {0, 0, 0, 1},
+    scale =  {1, 1, 1},
+    parametric =  0,
+    lod =  0,
+    subobjects =  {"launcher"  },
+    diffuse_color =  {0.8, 0.8, 0.8, 1},
+    ambient =  {0, 0, 0, 0},
+    emmision_color =  {0, 0, 0, 0},
+    specular_color =  {0, 0, 0, 1},
+    shininess =  0,
+    texture =  "missile_launcher",
+
+    mesh = "launcher_rotating"
+}
+

@@ -1,0 +1,18 @@
+cactus2 = {
+    name =  "cactus2",
+    transform =  {0, 0, 0},
+    rotation =  {0, 0, 0, 1},
+    scale =  {4, 4, 4},
+    lod =  0,
+    subobjects =  { },
+    diffuse_color =  {1,1,1,1},
+    ambient =  {0, 0, 0, 0},
+    emmision_color =  {0, 0, 0, 0},
+    specular_color =  {0, 0, 0, 1},
+    shininess =  0,
+    texture =  "cactus",
+
+    mesh = "cactus2",
+
+    hull_strength = 10
+}

@@ -1,0 +1,1304 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject ProjectType="Visual C++" Version="7.00" Name="reaper" ProjectGUID="{BD7FF2B5-370B-4C6D-ACBD-AF681E0787BF}" SccProjectName="" SccLocalPath="">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\Debug" IntermediateDirectory=".\Debug" ConfigurationType="4" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+			<Tool Name="VCCLCompilerTool" Optimization="0" OptimizeForProcessor="2" AdditionalIncludeDirectories="../../../src,../../win32-support/include" PreprocessorDefinitions="_LIB,_DEBUG,WIN32" BasicRuntimeChecks="3" RuntimeLibrary="3" EnableFunctionLevelLinking="TRUE" RuntimeTypeInfo="TRUE" PrecompiledHeaderFile=".\Debug/reaper.pch" AssemblerListingLocation=".\Debug/" ObjectFile=".\Debug/" ProgramDataBaseFileName=".\Debug/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="1" CompileAs="0"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCLibrarianTool" AdditionalOptions="/nodefaultlib:libc " OutputFile=".\Debug\reaper.lib" SuppressStartupBanner="TRUE"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+			<Tool Name="VCPreBuildEventTool" CommandLine="del ..\public\reaper_demo\debug\version.obj | cd"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG" Culture="1033"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\Release" IntermediateDirectory=".\Release" ConfigurationType="4" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="FALSE" CharacterSet="2">
+			<Tool Name="VCCLCompilerTool" InlineFunctionExpansion="2" OptimizeForProcessor="2" AdditionalIncludeDirectories="../../../src,../../win32-support/include" PreprocessorDefinitions="NDEBUG,_LIB,WIN32,_STLP_DEBUG=1" StringPooling="TRUE" RuntimeLibrary="2" EnableFunctionLevelLinking="TRUE" RuntimeTypeInfo="TRUE" PrecompiledHeaderFile=".\Release/reaper.pch" AssemblerListingLocation=".\Release/" ObjectFile=".\Release/" ProgramDataBaseFileName=".\Release/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="TRUE" DebugInformationFormat="3" CompileAs="0"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile=".\Release\reaper.lib" SuppressStartupBanner="TRUE"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+			<Tool Name="VCPreBuildEventTool" CommandLine="del ..\public\reaper_demo\release\version.obj | cd"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG" Culture="1033"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+		</Configuration>
+	</Configurations>
+	<Files>
+		<Filter Name="Header Files" Filter="h;hpp;hxx;hm;inl"><Filter Name="ai" Filter=""><File RelativePath="..\..\..\src\ai\astar.h">
+	</File>
+	<File RelativePath="..\..\..\src\ai\exceptions.h">
+	</File>
+	<File RelativePath="..\..\..\src\ai\fsm.h">
+	</File>
+	<File RelativePath="..\..\..\src\ai\msg.h">
+	</File>
+	<File RelativePath="..\..\..\src\ai\navigation_graph.h">
+	</File>
+	<File RelativePath="..\..\..\src\ai\part.h">
+	</File>
+	<File RelativePath="..\..\..\src\ai\steering.h">
+	</File>
+	<File RelativePath="..\..\..\src\ai\thinker.h">
+	</File>
+	<File RelativePath="..\..\..\src\ai\waypoints.h">
+	</File>
+	</Filter>
+	<Filter Name="game" Filter=""><File RelativePath="..\..\..\src\game\forked.h">
+	</File>
+	<File RelativePath="..\..\..\src\game\helpers.h">
+	</File>
+	<File RelativePath="..\..\..\src\game\mainloop.h">
+	</File>
+	<File RelativePath="..\..\..\src\game\menus.h">
+	</File>
+	<File RelativePath="..\..\..\src\game\mission.h">
+	</File>
+	<File RelativePath="..\..\..\src\game\object_mgr.h">
+	</File>
+	<File RelativePath="..\..\..\src\game\progressbar.h">
+	</File>
+	<File RelativePath="..\..\..\src\game\scenario_mgr.h">
+	</File>
+	<File RelativePath="..\..\..\src\game\scenario_states.h">
+	</File>
+	<File RelativePath="..\..\..\src\game\scheduler.h">
+	</File>
+	</Filter>
+	<Filter Name="gfx" Filter=""><File RelativePath="..\..\..\src\gfx\abstracts.h">
+	</File>
+	<File RelativePath="..\..\..\src\gfx\camera.h">
+	</File>
+	<File RelativePath="..\..\..\src\gfx\displaylist.h">
+	</File>
+	<File RelativePath="..\..\..\src\gfx\exceptions.h">
+	</File>
+	<File RelativePath="..\..\..\src\gfx\fence.h">
+	</File>
+	<File RelativePath="..\..\..\src\gfx\fps_meter.h">
+	</File>
+	<File RelativePath="..\..\..\src\gfx\geometry.h">
+	</File>
+	<File RelativePath="..\..\..\src\gfx\gfx.h">
+	</File>
+	<File RelativePath="..\..\..\src\gfx\gfx_types.h">
+	</File>
+	<File RelativePath="..\..\..\src\gfx\hud.h">
+	</File>
+	<File RelativePath="..\..\..\src\gfx\initializers.h">
+	</File>
+	<File RelativePath="..\..\..\src\gfx\instances.h">
+	</File>
+	<File RelativePath="..\..\..\src\gfx\interfaces.h">
+	</File>
+	<File RelativePath="..\..\..\src\gfx\io.h">
+	</File>
+	<File RelativePath="..\..\..\src\gfx\light.h">
+	</File>
+	<File RelativePath="..\..\..\src\gfx\managers.h">
+	</File>
+	<File RelativePath="..\..\..\src\gfx\mesh.h">
+	</File>
+	<File RelativePath="..\..\..\src\gfx\misc.h">
+	</File>
+	<File RelativePath="..\..\..\src\gfx\renderer.h">
+	</File>
+	<File RelativePath="..\..\..\src\gfx\settings.h">
+	</File>
+	<File RelativePath="..\..\..\src\gfx\shaders.h">
+	</File>
+	<File RelativePath="..\..\..\src\gfx\static_geom.h">
+	</File>
+	<File RelativePath="..\..\..\src\gfx\statistics.h">
+	</File>
+	<File RelativePath="..\..\..\src\gfx\texture.h">
+	</File>
+	<File RelativePath="..\..\..\src\gfx\vertex_array.h">
+	</File>
+	</Filter>
+	<Filter Name="gfx/cloud" Filter=""><File RelativePath="..\..\..\src\gfx\cloud\cloud.h">
+	</File>
+	<File RelativePath="..\..\..\src\gfx\cloud\cloud_impl.h">
+	</File>
+	<File RelativePath="..\..\..\src\gfx\cloud\impostor.h">
+	</File>
+	<File RelativePath="..\..\..\src\gfx\cloud\misc.h">
+	</File>
+	<File RelativePath="..\..\..\src\gfx\cloud\particle.h">
+	</File>
+	<File RelativePath="..\..\..\src\gfx\cloud\simulate.h">
+	</File>
+	</Filter>
+	<Filter Name="gfx/pm" Filter=""><File RelativePath="..\..\..\src\gfx\pm\badheap.h">
+	</File>
+	<File RelativePath="..\..\..\src\gfx\pm\pm.h">
+	</File>
+	<File RelativePath="..\..\..\src\gfx\pm\pm_types.h">
+	</File>
+	<File RelativePath="..\..\..\src\gfx\pm\treap.h">
+	</File>
+	</Filter>
+	<Filter Name="gfx/shadow" Filter=""><File RelativePath="..\..\..\src\gfx\shadow\main.h">
+	</File>
+	<File RelativePath="..\..\..\src\gfx\shadow\types.h">
+	</File>
+	<File RelativePath="..\..\..\src\gfx\shadow\utility.h">
+	</File>
+	</Filter>
+	<Filter Name="main" Filter=""><File RelativePath="..\..\..\src\main\enums.h">
+	</File>
+	<File RelativePath="..\..\..\src\main\exceptions.h">
+	</File>
+	<File RelativePath="..\..\..\src\main\types.h">
+	</File>
+	<File RelativePath="..\..\..\src\main\types4.h">
+	</File>
+	<File RelativePath="..\..\..\src\main\types4_io.h">
+	</File>
+	<File RelativePath="..\..\..\src\main\types4_ops.h">
+	</File>
+	<File RelativePath="..\..\..\src\main\types_base.h">
+	</File>
+	<File RelativePath="..\..\..\src\main\types_forward.h">
+	</File>
+	<File RelativePath="..\..\..\src\main\types_io.h">
+	</File>
+	<File RelativePath="..\..\..\src\main\types_ops.h">
+	</File>
+	<File RelativePath="..\..\..\src\main\types_param.h">
+	</File>
+	</Filter>
+	<Filter Name="misc" Filter=""><File RelativePath="..\..\..\src\misc\base.h">
+	</File>
+	<File RelativePath="..\..\..\src\misc\command.h">
+	</File>
+	<File RelativePath="..\..\..\src\misc\creator.h">
+	</File>
+	<File RelativePath="..\..\..\src\misc\event.h">
+	</File>
+	<File RelativePath="..\..\..\src\misc\font.h">
+	</File>
+	<File RelativePath="..\..\..\src\misc\free.h">
+	</File>
+	<File RelativePath="..\..\..\src\misc\hash.h">
+	</File>
+	<File RelativePath="..\..\..\src\misc\iostream_helper.h">
+	</File>
+	<File RelativePath="..\..\..\src\misc\map.h">
+	</File>
+	<File RelativePath="..\..\..\src\misc\maybe.h">
+	</File>
+	<File RelativePath="..\..\..\src\misc\menu.h">
+	</File>
+	<File RelativePath="..\..\..\src\misc\menu_system.h">
+	</File>
+	<File RelativePath="..\..\..\src\misc\monitor.h">
+	</File>
+	<File RelativePath="..\..\..\src\misc\parse.h">
+	</File>
+	<File RelativePath="..\..\..\src\misc\plugin.h">
+	</File>
+	<File RelativePath="..\..\..\src\misc\prim_iter.h">
+	</File>
+	<File RelativePath="..\..\..\src\misc\prim_iter_impl.h">
+	</File>
+	<File RelativePath="..\..\..\src\misc\profile.h">
+	</File>
+	<File RelativePath="..\..\..\src\misc\resmgr.h">
+	</File>
+	<File RelativePath="..\..\..\src\misc\sequence.h">
+	</File>
+	<File RelativePath="..\..\..\src\misc\singleton.h">
+	</File>
+	<File RelativePath="..\..\..\src\misc\skipiter.h">
+	</File>
+	<File RelativePath="..\..\..\src\misc\smartptr.h">
+	</File>
+	<File RelativePath="..\..\..\src\misc\stlhelper.h">
+	</File>
+	<File RelativePath="..\..\..\src\misc\test_main.h">
+	</File>
+	<File RelativePath="..\..\..\src\misc\tuple.h">
+	</File>
+	<File RelativePath="..\..\..\src\misc\unique.h">
+	</File>
+	<File RelativePath="..\..\..\src\misc\uniqueptr.h">
+	</File>
+	<File RelativePath="..\..\..\src\misc\utility.h">
+	</File>
+	</Filter>
+	<Filter Name="msg" Filter=""><File RelativePath="..\..\..\src\msg\event.h">
+	</File>
+	<File RelativePath="..\..\..\src\msg\mapping.h">
+	</File>
+	</Filter>
+	<Filter Name="net" Filter=""><File RelativePath="..\..\..\src\net\game_mgr.h">
+	</File>
+	<File RelativePath="..\..\..\src\net\nameservice.h">
+	</File>
+	<File RelativePath="..\..\..\src\net\net.h">
+	</File>
+	<File RelativePath="..\..\..\src\net\netgame.h">
+	</File>
+	<File RelativePath="..\..\..\src\net\server.h">
+	</File>
+	<File RelativePath="..\..\..\src\net\sockstream.h">
+	</File>
+	<File RelativePath="..\..\..\src\net\sync.h">
+	</File>
+	</Filter>
+	<Filter Name="object" Filter=""><File RelativePath="..\..\..\src\object\accessor.h">
+	</File>
+	<File RelativePath="..\..\..\src\object\ai.h">
+	</File>
+	<File RelativePath="..\..\..\src\object\base.h">
+	</File>
+	<File RelativePath="..\..\..\src\object\base_data.h">
+	</File>
+	<File RelativePath="..\..\..\src\object\baseptr.h">
+	</File>
+	<File RelativePath="..\..\..\src\object\collide.h">
+	</File>
+	<File RelativePath="..\..\..\src\object\controls.h">
+	</File>
+	<File RelativePath="..\..\..\src\object\current_data.h">
+	</File>
+	<File RelativePath="..\..\..\src\object\event.h">
+	</File>
+	<File RelativePath="..\..\..\src\object\exceptions.h">
+	</File>
+	<File RelativePath="..\..\..\src\object\factory.h">
+	</File>
+	<File RelativePath="..\..\..\src\object\factory_loaders.h">
+	</File>
+	<File RelativePath="..\..\..\src\object\forward.h">
+	</File>
+	<File RelativePath="..\..\..\src\object\gen_ship.h">
+	</File>
+	<File RelativePath="..\..\..\src\object\hull.h">
+	</File>
+	<File RelativePath="..\..\..\src\object\id.h">
+	</File>
+	<File RelativePath="..\..\..\src\object\impl.h">
+	</File>
+	<File RelativePath="..\..\..\src\object\mkinfo.h">
+	</File>
+	<File RelativePath="..\..\..\src\object\obj_factory.h">
+	</File>
+	<File RelativePath="..\..\..\src\object\object.h">
+	</File>
+	<File RelativePath="..\..\..\src\object\object_impl.h">
+	</File>
+	<File RelativePath="..\..\..\src\object\objectgroup.h">
+	</File>
+	<File RelativePath="..\..\..\src\object\phys.h">
+	</File>
+	<File RelativePath="..\..\..\src\object\phys_acc.h">
+	</File>
+	<File RelativePath="..\..\..\src\object\phys_data.h">
+	</File>
+	<File RelativePath="..\..\..\src\object\player_ai.h">
+	</File>
+	<File RelativePath="..\..\..\src\object\projectile.h">
+	</File>
+	<File RelativePath="..\..\..\src\object\reg.h">
+	</File>
+	<File RelativePath="..\..\..\src\object\renderer.h">
+	</File>
+	<File RelativePath="..\..\..\src\object\sound.h">
+	</File>
+	<File RelativePath="..\..\..\src\object\sync.h">
+	</File>
+	<File RelativePath="..\..\..\src\object\weapon.h">
+	</File>
+	</Filter>
+	<Filter Name="os" Filter=""><File RelativePath="..\..\..\src\os\abstime.h">
+	</File>
+	<File RelativePath="..\..\..\src\os\bits.h">
+	</File>
+	<File RelativePath="..\..\..\src\os\compat.h">
+	</File>
+	<File RelativePath="..\..\..\src\os\conc_types.h">
+	</File>
+	<File RelativePath="..\..\..\src\os\concurrent.h">
+	</File>
+	<File RelativePath="..\..\..\src\os\debug.h">
+	</File>
+	<File RelativePath="..\..\..\src\os\decoder.h">
+	</File>
+	<File RelativePath="..\..\..\src\os\dxwrap.h">
+	</File>
+	<File RelativePath="..\..\..\src\os\dynload.h">
+	</File>
+	<File RelativePath="..\..\..\src\os\exceptions.h">
+	</File>
+	<File RelativePath="..\..\..\src\os\extra.h">
+	</File>
+	<File RelativePath="..\..\..\src\os\fdstream.h">
+	</File>
+	<File RelativePath="..\..\..\src\os\gfx.h">
+	</File>
+	<File RelativePath="..\..\..\src\os\gl.h">
+	</File>
+	<File RelativePath="..\..\..\src\os\interfaces.h">
+	</File>
+	<File RelativePath="..\..\..\src\os\osinfo.h">
+	</File>
+	<File RelativePath="..\..\..\src\os\reltime.h">
+	</File>
+	<File RelativePath="..\..\..\src\os\snd.h">
+	</File>
+	<File RelativePath="..\..\..\src\os\stacktrace.h">
+	</File>
+	<File RelativePath="..\..\..\src\os\stat.h">
+	</File>
+	<File RelativePath="..\..\..\src\os\time.h">
+	</File>
+	<File RelativePath="..\..\..\src\os\time_types.h">
+	</File>
+	<File RelativePath="..\..\..\src\os\win32_errors.h">
+	</File>
+	<File RelativePath="..\..\..\src\os\windows.h">
+	</File>
+	<File RelativePath="..\..\..\src\os\worker.h">
+	</File>
+	</Filter>
+	<Filter Name="os/event" Filter=""><File RelativePath="..\..\..\src\os\event\event_impl.h">
+	</File>
+	<File RelativePath="..\..\..\src\os\event\event_prim.h">
+	</File>
+	</Filter>
+	<Filter Name="os/gfx" Filter=""><File RelativePath="..\..\..\src\os\gfx\gfx_driver.h">
+	</File>
+	<File RelativePath="..\..\..\src\os\gfx\gfx_types.h">
+	</File>
+	<File RelativePath="..\..\..\src\os\gfx\gfxplugin.h">
+	</File>
+	</Filter>
+	<Filter Name="os/gl" Filter=""><File RelativePath="..\..\..\src\os\gl\gl.h">
+	</File>
+	<File RelativePath="..\..\..\src\os\gl\gl_helper.h">
+	</File>
+	<File RelativePath="..\..\..\src\os\gl\gl_info.h">
+	</File>
+	<File RelativePath="..\..\..\src\os\gl\gl_state.h">
+	</File>
+	</Filter>
+	<Filter Name="os/net" Filter=""><File RelativePath="..\..\..\src\os\net\netcompat.h">
+	</File>
+	<File RelativePath="..\..\..\src\os\net\socket.h">
+	</File>
+	</Filter>
+	<Filter Name="os/snd" Filter=""><File RelativePath="..\..\..\src\os\snd\snd_mp3.h">
+	</File>
+	<File RelativePath="..\..\..\src\os\snd\snd_simple.h">
+	</File>
+	<File RelativePath="..\..\..\src\os\snd\snd_subsystem.h">
+	</File>
+	<File RelativePath="..\..\..\src\os\snd\snd_types.h">
+	</File>
+	<File RelativePath="..\..\..\src\os\snd\snd_wave.h">
+	</File>
+	</Filter>
+	<Filter Name="phys" Filter=""><File RelativePath="..\..\..\src\phys\accessor.h">
+	</File>
+	<File RelativePath="..\..\..\src\phys\collisionQueue.h">
+	</File>
+	<File RelativePath="..\..\..\src\phys\engine.h">
+	</File>
+	<File RelativePath="..\..\..\src\phys\engine_impl.h">
+	</File>
+	<File RelativePath="..\..\..\src\phys\exceptions.h">
+	</File>
+	<File RelativePath="..\..\..\src\phys\pairs.h">
+	</File>
+	<File RelativePath="..\..\..\src\phys\phys.h">
+	</File>
+	<File RelativePath="..\..\..\src\phys\physConstants.h">
+	</File>
+	<File RelativePath="..\..\..\src\phys\register.h">
+	</File>
+	<File RelativePath="..\..\..\src\phys\treap.h">
+	</File>
+	</Filter>
+	<Filter Name="public" Filter=""/>
+	<Filter Name="public/prototype" Filter=""/>
+	<Filter Name="res" Filter=""><File RelativePath="..\..\..\src\res\config.h">
+	</File>
+	<File RelativePath="..\..\..\src\res\res.h">
+	</File>
+	<File RelativePath="..\..\..\src\res\resource.h">
+	</File>
+	<File RelativePath="..\..\..\src\res\zstream.h">
+	</File>
+	</Filter>
+	<Filter Name="snd" Filter=""><File RelativePath="..\..\..\src\snd\accessor.h">
+	</File>
+	<File RelativePath="..\..\..\src\snd\sound_system.h">
+	</File>
+	</Filter>
+	<Filter Name="world" Filter=""><File RelativePath="..\..\..\src\world\exceptions.h">
+	</File>
+	<File RelativePath="..\..\..\src\world\geom_helper.h">
+	</File>
+	<File RelativePath="..\..\..\src\world\geometry.h">
+	</File>
+	<File RelativePath="..\..\..\src\world\level.h">
+	</File>
+	<File RelativePath="..\..\..\src\world\quadtree.h">
+	</File>
+	<File RelativePath="..\..\..\src\world\query_obj.h">
+	</File>
+	<File RelativePath="..\..\..\src\world\triangle.h">
+	</File>
+	<File RelativePath="..\..\..\src\world\world.h">
+	</File>
+	<File RelativePath="..\..\..\src\world\world_impl.h">
+	</File>
+	<File RelativePath="..\..\..\src\world\worldref.h">
+	</File>
+	</Filter>
+	</Filter>
+		<Filter Name="Source Files" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat"><Filter Name="ai" Filter=""><File RelativePath="..\..\..\src\ai\astar.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/ai/" AssemblerListingLocation="Release/ai/" ProgramDataBaseFileName="Release/ai/" BrowseInformationFile="Release/ai/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/ai/" AssemblerListingLocation="Debug/ai/" ProgramDataBaseFileName="Debug/ai/" BrowseInformationFile="Debug/ai/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\ai\fsm.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/ai/" AssemblerListingLocation="Release/ai/" ProgramDataBaseFileName="Release/ai/" BrowseInformationFile="Release/ai/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/ai/" AssemblerListingLocation="Debug/ai/" ProgramDataBaseFileName="Debug/ai/" BrowseInformationFile="Debug/ai/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\ai\gvbase.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/ai/" AssemblerListingLocation="Release/ai/" ProgramDataBaseFileName="Release/ai/" BrowseInformationFile="Release/ai/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/ai/" AssemblerListingLocation="Debug/ai/" ProgramDataBaseFileName="Debug/ai/" BrowseInformationFile="Debug/ai/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\ai\gvcontainer.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/ai/" AssemblerListingLocation="Release/ai/" ProgramDataBaseFileName="Release/ai/" BrowseInformationFile="Release/ai/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/ai/" AssemblerListingLocation="Debug/ai/" ProgramDataBaseFileName="Debug/ai/" BrowseInformationFile="Debug/ai/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\ai\gvordinary.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/ai/" AssemblerListingLocation="Release/ai/" ProgramDataBaseFileName="Release/ai/" BrowseInformationFile="Release/ai/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/ai/" AssemblerListingLocation="Debug/ai/" ProgramDataBaseFileName="Debug/ai/" BrowseInformationFile="Debug/ai/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\ai\gvturret.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/ai/" AssemblerListingLocation="Release/ai/" ProgramDataBaseFileName="Release/ai/" BrowseInformationFile="Release/ai/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/ai/" AssemblerListingLocation="Debug/ai/" ProgramDataBaseFileName="Debug/ai/" BrowseInformationFile="Debug/ai/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\ai\navigation_graph.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/ai/" AssemblerListingLocation="Release/ai/" ProgramDataBaseFileName="Release/ai/" BrowseInformationFile="Release/ai/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/ai/" AssemblerListingLocation="Debug/ai/" ProgramDataBaseFileName="Debug/ai/" BrowseInformationFile="Debug/ai/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\ai\player.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/ai/" AssemblerListingLocation="Release/ai/" ProgramDataBaseFileName="Release/ai/" BrowseInformationFile="Release/ai/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/ai/" AssemblerListingLocation="Debug/ai/" ProgramDataBaseFileName="Debug/ai/" BrowseInformationFile="Debug/ai/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\ai\ship_base.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/ai/" AssemblerListingLocation="Release/ai/" ProgramDataBaseFileName="Release/ai/" BrowseInformationFile="Release/ai/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/ai/" AssemblerListingLocation="Debug/ai/" ProgramDataBaseFileName="Debug/ai/" BrowseInformationFile="Debug/ai/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\ai\ship_bomber.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/ai/" AssemblerListingLocation="Release/ai/" ProgramDataBaseFileName="Release/ai/" BrowseInformationFile="Release/ai/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/ai/" AssemblerListingLocation="Debug/ai/" ProgramDataBaseFileName="Debug/ai/" BrowseInformationFile="Debug/ai/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\ai\ship_fighter.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/ai/" AssemblerListingLocation="Release/ai/" ProgramDataBaseFileName="Release/ai/" BrowseInformationFile="Release/ai/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/ai/" AssemblerListingLocation="Debug/ai/" ProgramDataBaseFileName="Debug/ai/" BrowseInformationFile="Debug/ai/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\ai\thinker.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/ai/" AssemblerListingLocation="Release/ai/" ProgramDataBaseFileName="Release/ai/" BrowseInformationFile="Release/ai/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/ai/" AssemblerListingLocation="Debug/ai/" ProgramDataBaseFileName="Debug/ai/" BrowseInformationFile="Debug/ai/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\ai\turret.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/ai/" AssemblerListingLocation="Release/ai/" ProgramDataBaseFileName="Release/ai/" BrowseInformationFile="Release/ai/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/ai/" AssemblerListingLocation="Debug/ai/" ProgramDataBaseFileName="Debug/ai/" BrowseInformationFile="Debug/ai/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\ai\waypoints.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/ai/" AssemblerListingLocation="Release/ai/" ProgramDataBaseFileName="Release/ai/" BrowseInformationFile="Release/ai/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/ai/" AssemblerListingLocation="Debug/ai/" ProgramDataBaseFileName="Debug/ai/" BrowseInformationFile="Debug/ai/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	</Filter>
+	<Filter Name="game" Filter=""><File RelativePath="..\..\..\src\game\helpers.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/game/" AssemblerListingLocation="Release/game/" ProgramDataBaseFileName="Release/game/" BrowseInformationFile="Release/game/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/game/" AssemblerListingLocation="Debug/game/" ProgramDataBaseFileName="Debug/game/" BrowseInformationFile="Debug/game/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\game\init.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/game/" AssemblerListingLocation="Release/game/" ProgramDataBaseFileName="Release/game/" BrowseInformationFile="Release/game/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/game/" AssemblerListingLocation="Debug/game/" ProgramDataBaseFileName="Debug/game/" BrowseInformationFile="Debug/game/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\game\mainloop.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/game/" AssemblerListingLocation="Release/game/" ProgramDataBaseFileName="Release/game/" BrowseInformationFile="Release/game/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/game/" AssemblerListingLocation="Debug/game/" ProgramDataBaseFileName="Debug/game/" BrowseInformationFile="Debug/game/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\game\menus.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/game/" AssemblerListingLocation="Release/game/" ProgramDataBaseFileName="Release/game/" BrowseInformationFile="Release/game/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/game/" AssemblerListingLocation="Debug/game/" ProgramDataBaseFileName="Debug/game/" BrowseInformationFile="Debug/game/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\game\mission.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/game/" AssemblerListingLocation="Release/game/" ProgramDataBaseFileName="Release/game/" BrowseInformationFile="Release/game/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/game/" AssemblerListingLocation="Debug/game/" ProgramDataBaseFileName="Debug/game/" BrowseInformationFile="Debug/game/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\game\object_mgr.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/game/" AssemblerListingLocation="Release/game/" ProgramDataBaseFileName="Release/game/" BrowseInformationFile="Release/game/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/game/" AssemblerListingLocation="Debug/game/" ProgramDataBaseFileName="Debug/game/" BrowseInformationFile="Debug/game/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\game\progressbar.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/game/" AssemblerListingLocation="Release/game/" ProgramDataBaseFileName="Release/game/" BrowseInformationFile="Release/game/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/game/" AssemblerListingLocation="Debug/game/" ProgramDataBaseFileName="Debug/game/" BrowseInformationFile="Debug/game/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\game\scenario_mgr.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/game/" AssemblerListingLocation="Release/game/" ProgramDataBaseFileName="Release/game/" BrowseInformationFile="Release/game/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/game/" AssemblerListingLocation="Debug/game/" ProgramDataBaseFileName="Debug/game/" BrowseInformationFile="Debug/game/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\game\scheduler.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/game/" AssemblerListingLocation="Release/game/" ProgramDataBaseFileName="Release/game/" BrowseInformationFile="Release/game/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/game/" AssemblerListingLocation="Debug/game/" ProgramDataBaseFileName="Debug/game/" BrowseInformationFile="Debug/game/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\game\startup.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/game/" AssemblerListingLocation="Release/game/" ProgramDataBaseFileName="Release/game/" BrowseInformationFile="Release/game/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/game/" AssemblerListingLocation="Debug/game/" ProgramDataBaseFileName="Debug/game/" BrowseInformationFile="Debug/game/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\game\state_base.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/game/" AssemblerListingLocation="Release/game/" ProgramDataBaseFileName="Release/game/" BrowseInformationFile="Release/game/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/game/" AssemblerListingLocation="Debug/game/" ProgramDataBaseFileName="Debug/game/" BrowseInformationFile="Debug/game/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	</Filter>
+	<Filter Name="gfx" Filter=""><File RelativePath="..\..\..\src\gfx\billboard.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/" AssemblerListingLocation="Release/gfx/" ProgramDataBaseFileName="Release/gfx/" BrowseInformationFile="Release/gfx/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/" AssemblerListingLocation="Debug/gfx/" ProgramDataBaseFileName="Debug/gfx/" BrowseInformationFile="Debug/gfx/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\camera.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/" AssemblerListingLocation="Release/gfx/" ProgramDataBaseFileName="Release/gfx/" BrowseInformationFile="Release/gfx/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/" AssemblerListingLocation="Debug/gfx/" ProgramDataBaseFileName="Debug/gfx/" BrowseInformationFile="Debug/gfx/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\cubemap.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/" AssemblerListingLocation="Release/gfx/" ProgramDataBaseFileName="Release/gfx/" BrowseInformationFile="Release/gfx/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/" AssemblerListingLocation="Debug/gfx/" ProgramDataBaseFileName="Debug/gfx/" BrowseInformationFile="Debug/gfx/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\dynamic_texture.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/" AssemblerListingLocation="Release/gfx/" ProgramDataBaseFileName="Release/gfx/" BrowseInformationFile="Release/gfx/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/" AssemblerListingLocation="Debug/gfx/" ProgramDataBaseFileName="Debug/gfx/" BrowseInformationFile="Debug/gfx/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\effects.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/" AssemblerListingLocation="Release/gfx/" ProgramDataBaseFileName="Release/gfx/" BrowseInformationFile="Release/gfx/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/" AssemblerListingLocation="Debug/gfx/" ProgramDataBaseFileName="Debug/gfx/" BrowseInformationFile="Debug/gfx/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\envmapper.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/" AssemblerListingLocation="Release/gfx/" ProgramDataBaseFileName="Release/gfx/" BrowseInformationFile="Release/gfx/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/" AssemblerListingLocation="Debug/gfx/" ProgramDataBaseFileName="Debug/gfx/" BrowseInformationFile="Debug/gfx/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\exceptions.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/" AssemblerListingLocation="Release/gfx/" ProgramDataBaseFileName="Release/gfx/" BrowseInformationFile="Release/gfx/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/" AssemblerListingLocation="Debug/gfx/" ProgramDataBaseFileName="Debug/gfx/" BrowseInformationFile="Debug/gfx/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\fps_meter.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/" AssemblerListingLocation="Release/gfx/" ProgramDataBaseFileName="Release/gfx/" BrowseInformationFile="Release/gfx/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/" AssemblerListingLocation="Debug/gfx/" ProgramDataBaseFileName="Debug/gfx/" BrowseInformationFile="Debug/gfx/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\geometry.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/" AssemblerListingLocation="Release/gfx/" ProgramDataBaseFileName="Release/gfx/" BrowseInformationFile="Release/gfx/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/" AssemblerListingLocation="Debug/gfx/" ProgramDataBaseFileName="Debug/gfx/" BrowseInformationFile="Debug/gfx/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\gfx.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/" AssemblerListingLocation="Release/gfx/" ProgramDataBaseFileName="Release/gfx/" BrowseInformationFile="Release/gfx/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/" AssemblerListingLocation="Debug/gfx/" ProgramDataBaseFileName="Debug/gfx/" BrowseInformationFile="Debug/gfx/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\gfx_init.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/" AssemblerListingLocation="Release/gfx/" ProgramDataBaseFileName="Release/gfx/" BrowseInformationFile="Release/gfx/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/" AssemblerListingLocation="Debug/gfx/" ProgramDataBaseFileName="Debug/gfx/" BrowseInformationFile="Debug/gfx/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\gfx_render.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/" AssemblerListingLocation="Release/gfx/" ProgramDataBaseFileName="Release/gfx/" BrowseInformationFile="Release/gfx/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/" AssemblerListingLocation="Debug/gfx/" ProgramDataBaseFileName="Debug/gfx/" BrowseInformationFile="Debug/gfx/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\gfx_screenshot.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/" AssemblerListingLocation="Release/gfx/" ProgramDataBaseFileName="Release/gfx/" BrowseInformationFile="Release/gfx/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/" AssemblerListingLocation="Debug/gfx/" ProgramDataBaseFileName="Debug/gfx/" BrowseInformationFile="Debug/gfx/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\gfx_simulate.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/" AssemblerListingLocation="Release/gfx/" ProgramDataBaseFileName="Release/gfx/" BrowseInformationFile="Release/gfx/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/" AssemblerListingLocation="Debug/gfx/" ProgramDataBaseFileName="Debug/gfx/" BrowseInformationFile="Debug/gfx/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\hud.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/" AssemblerListingLocation="Release/gfx/" ProgramDataBaseFileName="Release/gfx/" BrowseInformationFile="Release/gfx/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/" AssemblerListingLocation="Debug/gfx/" ProgramDataBaseFileName="Debug/gfx/" BrowseInformationFile="Debug/gfx/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\instances.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/" AssemblerListingLocation="Release/gfx/" ProgramDataBaseFileName="Release/gfx/" BrowseInformationFile="Release/gfx/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/" AssemblerListingLocation="Debug/gfx/" ProgramDataBaseFileName="Debug/gfx/" BrowseInformationFile="Debug/gfx/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\io.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/" AssemblerListingLocation="Release/gfx/" ProgramDataBaseFileName="Release/gfx/" BrowseInformationFile="Release/gfx/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/" AssemblerListingLocation="Debug/gfx/" ProgramDataBaseFileName="Debug/gfx/" BrowseInformationFile="Debug/gfx/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\light.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/" AssemblerListingLocation="Release/gfx/" ProgramDataBaseFileName="Release/gfx/" BrowseInformationFile="Release/gfx/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/" AssemblerListingLocation="Debug/gfx/" ProgramDataBaseFileName="Debug/gfx/" BrowseInformationFile="Debug/gfx/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\light_mgr.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/" AssemblerListingLocation="Release/gfx/" ProgramDataBaseFileName="Release/gfx/" BrowseInformationFile="Release/gfx/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/" AssemblerListingLocation="Debug/gfx/" ProgramDataBaseFileName="Debug/gfx/" BrowseInformationFile="Debug/gfx/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\mesh.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/" AssemblerListingLocation="Release/gfx/" ProgramDataBaseFileName="Release/gfx/" BrowseInformationFile="Release/gfx/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/" AssemblerListingLocation="Debug/gfx/" ProgramDataBaseFileName="Debug/gfx/" BrowseInformationFile="Debug/gfx/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\mesh_file.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/" AssemblerListingLocation="Release/gfx/" ProgramDataBaseFileName="Release/gfx/" BrowseInformationFile="Release/gfx/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/" AssemblerListingLocation="Debug/gfx/" ProgramDataBaseFileName="Debug/gfx/" BrowseInformationFile="Debug/gfx/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\mesh_file_read.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/" AssemblerListingLocation="Release/gfx/" ProgramDataBaseFileName="Release/gfx/" BrowseInformationFile="Release/gfx/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/" AssemblerListingLocation="Debug/gfx/" ProgramDataBaseFileName="Debug/gfx/" BrowseInformationFile="Debug/gfx/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\mesh_mgr.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/" AssemblerListingLocation="Release/gfx/" ProgramDataBaseFileName="Release/gfx/" BrowseInformationFile="Release/gfx/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/" AssemblerListingLocation="Debug/gfx/" ProgramDataBaseFileName="Debug/gfx/" BrowseInformationFile="Debug/gfx/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\misc.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/" AssemblerListingLocation="Release/gfx/" ProgramDataBaseFileName="Release/gfx/" BrowseInformationFile="Release/gfx/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/" AssemblerListingLocation="Debug/gfx/" ProgramDataBaseFileName="Debug/gfx/" BrowseInformationFile="Debug/gfx/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\particles.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/" AssemblerListingLocation="Release/gfx/" ProgramDataBaseFileName="Release/gfx/" BrowseInformationFile="Release/gfx/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/" AssemblerListingLocation="Debug/gfx/" ProgramDataBaseFileName="Debug/gfx/" BrowseInformationFile="Debug/gfx/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\png.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/" AssemblerListingLocation="Release/gfx/" ProgramDataBaseFileName="Release/gfx/" BrowseInformationFile="Release/gfx/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/" AssemblerListingLocation="Debug/gfx/" ProgramDataBaseFileName="Debug/gfx/" BrowseInformationFile="Debug/gfx/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\settings.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/" AssemblerListingLocation="Release/gfx/" ProgramDataBaseFileName="Release/gfx/" BrowseInformationFile="Release/gfx/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/" AssemblerListingLocation="Debug/gfx/" ProgramDataBaseFileName="Debug/gfx/" BrowseInformationFile="Debug/gfx/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\shaders.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/" AssemblerListingLocation="Release/gfx/" ProgramDataBaseFileName="Release/gfx/" BrowseInformationFile="Release/gfx/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/" AssemblerListingLocation="Debug/gfx/" ProgramDataBaseFileName="Debug/gfx/" BrowseInformationFile="Debug/gfx/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\sky.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/" AssemblerListingLocation="Release/gfx/" ProgramDataBaseFileName="Release/gfx/" BrowseInformationFile="Release/gfx/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/" AssemblerListingLocation="Debug/gfx/" ProgramDataBaseFileName="Debug/gfx/" BrowseInformationFile="Debug/gfx/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\static_geom.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/" AssemblerListingLocation="Release/gfx/" ProgramDataBaseFileName="Release/gfx/" BrowseInformationFile="Release/gfx/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/" AssemblerListingLocation="Debug/gfx/" ProgramDataBaseFileName="Debug/gfx/" BrowseInformationFile="Debug/gfx/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\statistics.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/" AssemblerListingLocation="Release/gfx/" ProgramDataBaseFileName="Release/gfx/" BrowseInformationFile="Release/gfx/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/" AssemblerListingLocation="Debug/gfx/" ProgramDataBaseFileName="Debug/gfx/" BrowseInformationFile="Debug/gfx/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\terrain.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/" AssemblerListingLocation="Release/gfx/" ProgramDataBaseFileName="Release/gfx/" BrowseInformationFile="Release/gfx/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/" AssemblerListingLocation="Debug/gfx/" ProgramDataBaseFileName="Debug/gfx/" BrowseInformationFile="Debug/gfx/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\texture.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/" AssemblerListingLocation="Release/gfx/" ProgramDataBaseFileName="Release/gfx/" BrowseInformationFile="Release/gfx/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/" AssemblerListingLocation="Debug/gfx/" ProgramDataBaseFileName="Debug/gfx/" BrowseInformationFile="Debug/gfx/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\texture_mgr.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/" AssemblerListingLocation="Release/gfx/" ProgramDataBaseFileName="Release/gfx/" BrowseInformationFile="Release/gfx/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/" AssemblerListingLocation="Debug/gfx/" ProgramDataBaseFileName="Debug/gfx/" BrowseInformationFile="Debug/gfx/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\vertex_mgr.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/" AssemblerListingLocation="Release/gfx/" ProgramDataBaseFileName="Release/gfx/" BrowseInformationFile="Release/gfx/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/" AssemblerListingLocation="Debug/gfx/" ProgramDataBaseFileName="Debug/gfx/" BrowseInformationFile="Debug/gfx/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\water.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/" AssemblerListingLocation="Release/gfx/" ProgramDataBaseFileName="Release/gfx/" BrowseInformationFile="Release/gfx/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/" AssemblerListingLocation="Debug/gfx/" ProgramDataBaseFileName="Debug/gfx/" BrowseInformationFile="Debug/gfx/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	</Filter>
+	<Filter Name="gfx/cloud" Filter=""><File RelativePath="..\..\..\src\gfx\cloud\cloud.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/cloud/" AssemblerListingLocation="Release/gfx/cloud/" ProgramDataBaseFileName="Release/gfx/cloud/" BrowseInformationFile="Release/gfx/cloud/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/cloud/" AssemblerListingLocation="Debug/gfx/cloud/" ProgramDataBaseFileName="Debug/gfx/cloud/" BrowseInformationFile="Debug/gfx/cloud/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\cloud\impostor.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/cloud/" AssemblerListingLocation="Release/gfx/cloud/" ProgramDataBaseFileName="Release/gfx/cloud/" BrowseInformationFile="Release/gfx/cloud/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/cloud/" AssemblerListingLocation="Debug/gfx/cloud/" ProgramDataBaseFileName="Debug/gfx/cloud/" BrowseInformationFile="Debug/gfx/cloud/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\cloud\particle.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/cloud/" AssemblerListingLocation="Release/gfx/cloud/" ProgramDataBaseFileName="Release/gfx/cloud/" BrowseInformationFile="Release/gfx/cloud/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/cloud/" AssemblerListingLocation="Debug/gfx/cloud/" ProgramDataBaseFileName="Debug/gfx/cloud/" BrowseInformationFile="Debug/gfx/cloud/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\cloud\simulate.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/cloud/" AssemblerListingLocation="Release/gfx/cloud/" ProgramDataBaseFileName="Release/gfx/cloud/" BrowseInformationFile="Release/gfx/cloud/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/cloud/" AssemblerListingLocation="Debug/gfx/cloud/" ProgramDataBaseFileName="Debug/gfx/cloud/" BrowseInformationFile="Debug/gfx/cloud/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	</Filter>
+	<Filter Name="gfx/pm" Filter=""><File RelativePath="..\..\..\src\gfx\pm\badheap.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/pm/" AssemblerListingLocation="Release/gfx/pm/" ProgramDataBaseFileName="Release/gfx/pm/" BrowseInformationFile="Release/gfx/pm/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/pm/" AssemblerListingLocation="Debug/gfx/pm/" ProgramDataBaseFileName="Debug/gfx/pm/" BrowseInformationFile="Debug/gfx/pm/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\pm\pm.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/pm/" AssemblerListingLocation="Release/gfx/pm/" ProgramDataBaseFileName="Release/gfx/pm/" BrowseInformationFile="Release/gfx/pm/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/pm/" AssemblerListingLocation="Debug/gfx/pm/" ProgramDataBaseFileName="Debug/gfx/pm/" BrowseInformationFile="Debug/gfx/pm/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\pm\treap.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/pm/" AssemblerListingLocation="Release/gfx/pm/" ProgramDataBaseFileName="Release/gfx/pm/" BrowseInformationFile="Release/gfx/pm/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/pm/" AssemblerListingLocation="Debug/gfx/pm/" ProgramDataBaseFileName="Debug/gfx/pm/" BrowseInformationFile="Debug/gfx/pm/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	</Filter>
+	<Filter Name="gfx/shadow" Filter=""><File RelativePath="..\..\..\src\gfx\shadow\main.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/shadow/" AssemblerListingLocation="Release/gfx/shadow/" ProgramDataBaseFileName="Release/gfx/shadow/" BrowseInformationFile="Release/gfx/shadow/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/shadow/" AssemblerListingLocation="Debug/gfx/shadow/" ProgramDataBaseFileName="Debug/gfx/shadow/" BrowseInformationFile="Debug/gfx/shadow/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\shadow\silhouette_all.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/shadow/" AssemblerListingLocation="Release/gfx/shadow/" ProgramDataBaseFileName="Release/gfx/shadow/" BrowseInformationFile="Release/gfx/shadow/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/shadow/" AssemblerListingLocation="Debug/gfx/shadow/" ProgramDataBaseFileName="Debug/gfx/shadow/" BrowseInformationFile="Debug/gfx/shadow/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\shadow\silhouette_dynamic.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/shadow/" AssemblerListingLocation="Release/gfx/shadow/" ProgramDataBaseFileName="Release/gfx/shadow/" BrowseInformationFile="Release/gfx/shadow/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/shadow/" AssemblerListingLocation="Debug/gfx/shadow/" ProgramDataBaseFileName="Debug/gfx/shadow/" BrowseInformationFile="Debug/gfx/shadow/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\shadow\silhouette_player.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/shadow/" AssemblerListingLocation="Release/gfx/shadow/" ProgramDataBaseFileName="Release/gfx/shadow/" BrowseInformationFile="Release/gfx/shadow/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/shadow/" AssemblerListingLocation="Debug/gfx/shadow/" ProgramDataBaseFileName="Debug/gfx/shadow/" BrowseInformationFile="Debug/gfx/shadow/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\shadow\simple_dynamic.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/shadow/" AssemblerListingLocation="Release/gfx/shadow/" ProgramDataBaseFileName="Release/gfx/shadow/" BrowseInformationFile="Release/gfx/shadow/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/shadow/" AssemblerListingLocation="Debug/gfx/shadow/" ProgramDataBaseFileName="Debug/gfx/shadow/" BrowseInformationFile="Debug/gfx/shadow/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\shadow\simple_player.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/shadow/" AssemblerListingLocation="Release/gfx/shadow/" ProgramDataBaseFileName="Release/gfx/shadow/" BrowseInformationFile="Release/gfx/shadow/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/shadow/" AssemblerListingLocation="Debug/gfx/shadow/" ProgramDataBaseFileName="Debug/gfx/shadow/" BrowseInformationFile="Debug/gfx/shadow/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\shadow\types.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/shadow/" AssemblerListingLocation="Release/gfx/shadow/" ProgramDataBaseFileName="Release/gfx/shadow/" BrowseInformationFile="Release/gfx/shadow/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/shadow/" AssemblerListingLocation="Debug/gfx/shadow/" ProgramDataBaseFileName="Debug/gfx/shadow/" BrowseInformationFile="Debug/gfx/shadow/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\gfx\shadow\utility.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/gfx/shadow/" AssemblerListingLocation="Release/gfx/shadow/" ProgramDataBaseFileName="Release/gfx/shadow/" BrowseInformationFile="Release/gfx/shadow/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/gfx/shadow/" AssemblerListingLocation="Debug/gfx/shadow/" ProgramDataBaseFileName="Debug/gfx/shadow/" BrowseInformationFile="Debug/gfx/shadow/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	</Filter>
+	<Filter Name="main" Filter=""><File RelativePath="..\..\..\src\main\exceptions.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/main/" AssemblerListingLocation="Release/main/" ProgramDataBaseFileName="Release/main/" BrowseInformationFile="Release/main/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/main/" AssemblerListingLocation="Debug/main/" ProgramDataBaseFileName="Debug/main/" BrowseInformationFile="Debug/main/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\main\types_io.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/main/" AssemblerListingLocation="Release/main/" ProgramDataBaseFileName="Release/main/" BrowseInformationFile="Release/main/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/main/" AssemblerListingLocation="Debug/main/" ProgramDataBaseFileName="Debug/main/" BrowseInformationFile="Debug/main/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\main\types_ops.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/main/" AssemblerListingLocation="Release/main/" ProgramDataBaseFileName="Release/main/" BrowseInformationFile="Release/main/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/main/" AssemblerListingLocation="Debug/main/" ProgramDataBaseFileName="Debug/main/" BrowseInformationFile="Debug/main/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	</Filter>
+	<Filter Name="misc" Filter=""><File RelativePath="..\..\..\src\misc\font.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/misc/" AssemblerListingLocation="Release/misc/" ProgramDataBaseFileName="Release/misc/" BrowseInformationFile="Release/misc/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/misc/" AssemblerListingLocation="Debug/misc/" ProgramDataBaseFileName="Debug/misc/" BrowseInformationFile="Debug/misc/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\misc\menu_system.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/misc/" AssemblerListingLocation="Release/misc/" ProgramDataBaseFileName="Release/misc/" BrowseInformationFile="Release/misc/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/misc/" AssemblerListingLocation="Debug/misc/" ProgramDataBaseFileName="Debug/misc/" BrowseInformationFile="Debug/misc/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\misc\parse.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/misc/" AssemblerListingLocation="Release/misc/" ProgramDataBaseFileName="Release/misc/" BrowseInformationFile="Release/misc/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/misc/" AssemblerListingLocation="Debug/misc/" ProgramDataBaseFileName="Debug/misc/" BrowseInformationFile="Debug/misc/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\misc\plugin.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/misc/" AssemblerListingLocation="Release/misc/" ProgramDataBaseFileName="Release/misc/" BrowseInformationFile="Release/misc/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/misc/" AssemblerListingLocation="Debug/misc/" ProgramDataBaseFileName="Debug/misc/" BrowseInformationFile="Debug/misc/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\misc\profile.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/misc/" AssemblerListingLocation="Release/misc/" ProgramDataBaseFileName="Release/misc/" BrowseInformationFile="Release/misc/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/misc/" AssemblerListingLocation="Debug/misc/" ProgramDataBaseFileName="Debug/misc/" BrowseInformationFile="Debug/misc/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\misc\ptrstats.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/misc/" AssemblerListingLocation="Release/misc/" ProgramDataBaseFileName="Release/misc/" BrowseInformationFile="Release/misc/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/misc/" AssemblerListingLocation="Debug/misc/" ProgramDataBaseFileName="Debug/misc/" BrowseInformationFile="Debug/misc/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\misc\singleton.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/misc/" AssemblerListingLocation="Release/misc/" ProgramDataBaseFileName="Release/misc/" BrowseInformationFile="Release/misc/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/misc/" AssemblerListingLocation="Debug/misc/" ProgramDataBaseFileName="Debug/misc/" BrowseInformationFile="Debug/misc/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\misc\unique.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/misc/" AssemblerListingLocation="Release/misc/" ProgramDataBaseFileName="Release/misc/" BrowseInformationFile="Release/misc/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/misc/" AssemblerListingLocation="Debug/misc/" ProgramDataBaseFileName="Debug/misc/" BrowseInformationFile="Debug/misc/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\misc\utility.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/misc/" AssemblerListingLocation="Release/misc/" ProgramDataBaseFileName="Release/misc/" BrowseInformationFile="Release/misc/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/misc/" AssemblerListingLocation="Debug/misc/" ProgramDataBaseFileName="Debug/misc/" BrowseInformationFile="Debug/misc/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\misc\version.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/misc/" AssemblerListingLocation="Release/misc/" ProgramDataBaseFileName="Release/misc/" BrowseInformationFile="Release/misc/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/misc/" AssemblerListingLocation="Debug/misc/" ProgramDataBaseFileName="Debug/misc/" BrowseInformationFile="Debug/misc/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	</Filter>
+	<Filter Name="msg" Filter=""><File RelativePath="..\..\..\src\msg\event.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/msg/" AssemblerListingLocation="Release/msg/" ProgramDataBaseFileName="Release/msg/" BrowseInformationFile="Release/msg/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/msg/" AssemblerListingLocation="Debug/msg/" ProgramDataBaseFileName="Debug/msg/" BrowseInformationFile="Debug/msg/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\msg\mapping.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/msg/" AssemblerListingLocation="Release/msg/" ProgramDataBaseFileName="Release/msg/" BrowseInformationFile="Release/msg/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/msg/" AssemblerListingLocation="Debug/msg/" ProgramDataBaseFileName="Debug/msg/" BrowseInformationFile="Debug/msg/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	</Filter>
+	<Filter Name="net" Filter=""><File RelativePath="..\..\..\src\net\game_mgr.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/net/" AssemblerListingLocation="Release/net/" ProgramDataBaseFileName="Release/net/" BrowseInformationFile="Release/net/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/net/" AssemblerListingLocation="Debug/net/" ProgramDataBaseFileName="Debug/net/" BrowseInformationFile="Debug/net/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\net\nameservice.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/net/" AssemblerListingLocation="Release/net/" ProgramDataBaseFileName="Release/net/" BrowseInformationFile="Release/net/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/net/" AssemblerListingLocation="Debug/net/" ProgramDataBaseFileName="Debug/net/" BrowseInformationFile="Debug/net/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\net\net.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/net/" AssemblerListingLocation="Release/net/" ProgramDataBaseFileName="Release/net/" BrowseInformationFile="Release/net/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/net/" AssemblerListingLocation="Debug/net/" ProgramDataBaseFileName="Debug/net/" BrowseInformationFile="Debug/net/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\net\netgame.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/net/" AssemblerListingLocation="Release/net/" ProgramDataBaseFileName="Release/net/" BrowseInformationFile="Release/net/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/net/" AssemblerListingLocation="Debug/net/" ProgramDataBaseFileName="Debug/net/" BrowseInformationFile="Debug/net/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\net\server.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/net/" AssemblerListingLocation="Release/net/" ProgramDataBaseFileName="Release/net/" BrowseInformationFile="Release/net/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/net/" AssemblerListingLocation="Debug/net/" ProgramDataBaseFileName="Debug/net/" BrowseInformationFile="Debug/net/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\net\sockstream.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/net/" AssemblerListingLocation="Release/net/" ProgramDataBaseFileName="Release/net/" BrowseInformationFile="Release/net/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/net/" AssemblerListingLocation="Debug/net/" ProgramDataBaseFileName="Debug/net/" BrowseInformationFile="Debug/net/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\net\sync.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/net/" AssemblerListingLocation="Release/net/" ProgramDataBaseFileName="Release/net/" BrowseInformationFile="Release/net/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/net/" AssemblerListingLocation="Debug/net/" ProgramDataBaseFileName="Debug/net/" BrowseInformationFile="Debug/net/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	</Filter>
+	<Filter Name="object" Filter=""><File RelativePath="..\..\..\src\object\accessor.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/object/" AssemblerListingLocation="Release/object/" ProgramDataBaseFileName="Release/object/" BrowseInformationFile="Release/object/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/object/" AssemblerListingLocation="Debug/object/" ProgramDataBaseFileName="Debug/object/" BrowseInformationFile="Debug/object/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\object\base.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/object/" AssemblerListingLocation="Release/object/" ProgramDataBaseFileName="Release/object/" BrowseInformationFile="Release/object/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/object/" AssemblerListingLocation="Debug/object/" ProgramDataBaseFileName="Debug/object/" BrowseInformationFile="Debug/object/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\object\base_data.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/object/" AssemblerListingLocation="Release/object/" ProgramDataBaseFileName="Release/object/" BrowseInformationFile="Release/object/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/object/" AssemblerListingLocation="Debug/object/" ProgramDataBaseFileName="Debug/object/" BrowseInformationFile="Debug/object/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\object\collide.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/object/" AssemblerListingLocation="Release/object/" ProgramDataBaseFileName="Release/object/" BrowseInformationFile="Release/object/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/object/" AssemblerListingLocation="Debug/object/" ProgramDataBaseFileName="Debug/object/" BrowseInformationFile="Debug/object/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\object\controls.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/object/" AssemblerListingLocation="Release/object/" ProgramDataBaseFileName="Release/object/" BrowseInformationFile="Release/object/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/object/" AssemblerListingLocation="Debug/object/" ProgramDataBaseFileName="Debug/object/" BrowseInformationFile="Debug/object/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\object\event.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/object/" AssemblerListingLocation="Release/object/" ProgramDataBaseFileName="Release/object/" BrowseInformationFile="Release/object/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/object/" AssemblerListingLocation="Debug/object/" ProgramDataBaseFileName="Debug/object/" BrowseInformationFile="Debug/object/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\object\factory.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/object/" AssemblerListingLocation="Release/object/" ProgramDataBaseFileName="Release/object/" BrowseInformationFile="Release/object/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/object/" AssemblerListingLocation="Debug/object/" ProgramDataBaseFileName="Debug/object/" BrowseInformationFile="Debug/object/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\object\gen_ship.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/object/" AssemblerListingLocation="Release/object/" ProgramDataBaseFileName="Release/object/" BrowseInformationFile="Release/object/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/object/" AssemblerListingLocation="Debug/object/" ProgramDataBaseFileName="Debug/object/" BrowseInformationFile="Debug/object/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\object\gvs.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/object/" AssemblerListingLocation="Release/object/" ProgramDataBaseFileName="Release/object/" BrowseInformationFile="Release/object/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/object/" AssemblerListingLocation="Debug/object/" ProgramDataBaseFileName="Debug/object/" BrowseInformationFile="Debug/object/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\object\hull.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/object/" AssemblerListingLocation="Release/object/" ProgramDataBaseFileName="Release/object/" BrowseInformationFile="Release/object/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/object/" AssemblerListingLocation="Debug/object/" ProgramDataBaseFileName="Debug/object/" BrowseInformationFile="Debug/object/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\object\mkinfo.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/object/" AssemblerListingLocation="Release/object/" ProgramDataBaseFileName="Release/object/" BrowseInformationFile="Release/object/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/object/" AssemblerListingLocation="Debug/object/" ProgramDataBaseFileName="Debug/object/" BrowseInformationFile="Debug/object/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\object\obj_factory.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/object/" AssemblerListingLocation="Release/object/" ProgramDataBaseFileName="Release/object/" BrowseInformationFile="Release/object/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/object/" AssemblerListingLocation="Debug/object/" ProgramDataBaseFileName="Debug/object/" BrowseInformationFile="Debug/object/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\object\object.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/object/" AssemblerListingLocation="Release/object/" ProgramDataBaseFileName="Release/object/" BrowseInformationFile="Release/object/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/object/" AssemblerListingLocation="Debug/object/" ProgramDataBaseFileName="Debug/object/" BrowseInformationFile="Debug/object/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\object\object_impl.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/object/" AssemblerListingLocation="Release/object/" ProgramDataBaseFileName="Release/object/" BrowseInformationFile="Release/object/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/object/" AssemblerListingLocation="Debug/object/" ProgramDataBaseFileName="Debug/object/" BrowseInformationFile="Debug/object/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\object\objectgroup.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/object/" AssemblerListingLocation="Release/object/" ProgramDataBaseFileName="Release/object/" BrowseInformationFile="Release/object/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/object/" AssemblerListingLocation="Debug/object/" ProgramDataBaseFileName="Debug/object/" BrowseInformationFile="Debug/object/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\object\objevent.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/object/" AssemblerListingLocation="Release/object/" ProgramDataBaseFileName="Release/object/" BrowseInformationFile="Release/object/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/object/" AssemblerListingLocation="Debug/object/" ProgramDataBaseFileName="Debug/object/" BrowseInformationFile="Debug/object/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\object\phys.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/object/" AssemblerListingLocation="Release/object/" ProgramDataBaseFileName="Release/object/" BrowseInformationFile="Release/object/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/object/" AssemblerListingLocation="Debug/object/" ProgramDataBaseFileName="Debug/object/" BrowseInformationFile="Debug/object/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\object\phys_data.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/object/" AssemblerListingLocation="Release/object/" ProgramDataBaseFileName="Release/object/" BrowseInformationFile="Release/object/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/object/" AssemblerListingLocation="Debug/object/" ProgramDataBaseFileName="Debug/object/" BrowseInformationFile="Debug/object/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\object\projectile.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/object/" AssemblerListingLocation="Release/object/" ProgramDataBaseFileName="Release/object/" BrowseInformationFile="Release/object/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/object/" AssemblerListingLocation="Debug/object/" ProgramDataBaseFileName="Debug/object/" BrowseInformationFile="Debug/object/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\object\renderer.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/object/" AssemblerListingLocation="Release/object/" ProgramDataBaseFileName="Release/object/" BrowseInformationFile="Release/object/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/object/" AssemblerListingLocation="Debug/object/" ProgramDataBaseFileName="Debug/object/" BrowseInformationFile="Debug/object/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\object\sheep.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/object/" AssemblerListingLocation="Release/object/" ProgramDataBaseFileName="Release/object/" BrowseInformationFile="Release/object/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/object/" AssemblerListingLocation="Debug/object/" ProgramDataBaseFileName="Debug/object/" BrowseInformationFile="Debug/object/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\object\ship.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/object/" AssemblerListingLocation="Release/object/" ProgramDataBaseFileName="Release/object/" BrowseInformationFile="Release/object/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/object/" AssemblerListingLocation="Debug/object/" ProgramDataBaseFileName="Debug/object/" BrowseInformationFile="Debug/object/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\object\shot.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/object/" AssemblerListingLocation="Release/object/" ProgramDataBaseFileName="Release/object/" BrowseInformationFile="Release/object/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/object/" AssemblerListingLocation="Debug/object/" ProgramDataBaseFileName="Debug/object/" BrowseInformationFile="Debug/object/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\object\sound.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/object/" AssemblerListingLocation="Release/object/" ProgramDataBaseFileName="Release/object/" BrowseInformationFile="Release/object/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/object/" AssemblerListingLocation="Debug/object/" ProgramDataBaseFileName="Debug/object/" BrowseInformationFile="Debug/object/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\object\sync.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/object/" AssemblerListingLocation="Release/object/" ProgramDataBaseFileName="Release/object/" BrowseInformationFile="Release/object/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/object/" AssemblerListingLocation="Debug/object/" ProgramDataBaseFileName="Debug/object/" BrowseInformationFile="Debug/object/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\object\tree.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/object/" AssemblerListingLocation="Release/object/" ProgramDataBaseFileName="Release/object/" BrowseInformationFile="Release/object/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/object/" AssemblerListingLocation="Debug/object/" ProgramDataBaseFileName="Debug/object/" BrowseInformationFile="Debug/object/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\object\turret.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/object/" AssemblerListingLocation="Release/object/" ProgramDataBaseFileName="Release/object/" BrowseInformationFile="Release/object/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/object/" AssemblerListingLocation="Debug/object/" ProgramDataBaseFileName="Debug/object/" BrowseInformationFile="Debug/object/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\object\weapon.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/object/" AssemblerListingLocation="Release/object/" ProgramDataBaseFileName="Release/object/" BrowseInformationFile="Release/object/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/object/" AssemblerListingLocation="Debug/object/" ProgramDataBaseFileName="Debug/object/" BrowseInformationFile="Debug/object/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	</Filter>
+	<Filter Name="os" Filter=""><File RelativePath="..\..\..\src\os\compat.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/os/" AssemblerListingLocation="Release/os/" ProgramDataBaseFileName="Release/os/" BrowseInformationFile="Release/os/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/os/" AssemblerListingLocation="Debug/os/" ProgramDataBaseFileName="Debug/os/" BrowseInformationFile="Debug/os/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\os\debug.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/os/" AssemblerListingLocation="Release/os/" ProgramDataBaseFileName="Release/os/" BrowseInformationFile="Release/os/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/os/" AssemblerListingLocation="Debug/os/" ProgramDataBaseFileName="Debug/os/" BrowseInformationFile="Debug/os/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\os\dynload.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/os/" AssemblerListingLocation="Release/os/" ProgramDataBaseFileName="Release/os/" BrowseInformationFile="Release/os/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/os/" AssemblerListingLocation="Debug/os/" ProgramDataBaseFileName="Debug/os/" BrowseInformationFile="Debug/os/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\os\extra.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/os/" AssemblerListingLocation="Release/os/" ProgramDataBaseFileName="Release/os/" BrowseInformationFile="Release/os/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/os/" AssemblerListingLocation="Debug/os/" ProgramDataBaseFileName="Debug/os/" BrowseInformationFile="Debug/os/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\os\fdstream.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/os/" AssemblerListingLocation="Release/os/" ProgramDataBaseFileName="Release/os/" BrowseInformationFile="Release/os/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/os/" AssemblerListingLocation="Debug/os/" ProgramDataBaseFileName="Debug/os/" BrowseInformationFile="Debug/os/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\os\osinfo.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/os/" AssemblerListingLocation="Release/os/" ProgramDataBaseFileName="Release/os/" BrowseInformationFile="Release/os/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/os/" AssemblerListingLocation="Debug/os/" ProgramDataBaseFileName="Debug/os/" BrowseInformationFile="Debug/os/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\os\stacktrace.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/os/" AssemblerListingLocation="Release/os/" ProgramDataBaseFileName="Release/os/" BrowseInformationFile="Release/os/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/os/" AssemblerListingLocation="Debug/os/" ProgramDataBaseFileName="Debug/os/" BrowseInformationFile="Debug/os/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\os\time.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/os/" AssemblerListingLocation="Release/os/" ProgramDataBaseFileName="Release/os/" BrowseInformationFile="Release/os/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/os/" AssemblerListingLocation="Debug/os/" ProgramDataBaseFileName="Debug/os/" BrowseInformationFile="Debug/os/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\os\time_types.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/os/" AssemblerListingLocation="Release/os/" ProgramDataBaseFileName="Release/os/" BrowseInformationFile="Release/os/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/os/" AssemblerListingLocation="Debug/os/" ProgramDataBaseFileName="Debug/os/" BrowseInformationFile="Debug/os/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\os\videomode.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/os/" AssemblerListingLocation="Release/os/" ProgramDataBaseFileName="Release/os/" BrowseInformationFile="Release/os/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/os/" AssemblerListingLocation="Debug/os/" ProgramDataBaseFileName="Debug/os/" BrowseInformationFile="Debug/os/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\os\worker.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/os/" AssemblerListingLocation="Release/os/" ProgramDataBaseFileName="Release/os/" BrowseInformationFile="Release/os/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/os/" AssemblerListingLocation="Debug/os/" ProgramDataBaseFileName="Debug/os/" BrowseInformationFile="Debug/os/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	</Filter>
+	<Filter Name="os/event" Filter=""><File RelativePath="..\..\..\src\os\event\event_impl.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/os/event/" AssemblerListingLocation="Release/os/event/" ProgramDataBaseFileName="Release/os/event/" BrowseInformationFile="Release/os/event/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/os/event/" AssemblerListingLocation="Debug/os/event/" ProgramDataBaseFileName="Debug/os/event/" BrowseInformationFile="Debug/os/event/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\os\event\event_prim.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/os/event/" AssemblerListingLocation="Release/os/event/" ProgramDataBaseFileName="Release/os/event/" BrowseInformationFile="Release/os/event/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/os/event/" AssemblerListingLocation="Debug/os/event/" ProgramDataBaseFileName="Debug/os/event/" BrowseInformationFile="Debug/os/event/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	</Filter>
+	<Filter Name="os/gfx" Filter=""><File RelativePath="..\..\..\src\os\gfx\gfx_drv.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/os/gfx/" AssemblerListingLocation="Release/os/gfx/" ProgramDataBaseFileName="Release/os/gfx/" BrowseInformationFile="Release/os/gfx/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/os/gfx/" AssemblerListingLocation="Debug/os/gfx/" ProgramDataBaseFileName="Debug/os/gfx/" BrowseInformationFile="Debug/os/gfx/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	</Filter>
+	<Filter Name="os/gl" Filter=""><File RelativePath="..\..\..\src\os\gl\gl_defs.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/os/gl/" AssemblerListingLocation="Release/os/gl/" ProgramDataBaseFileName="Release/os/gl/" BrowseInformationFile="Release/os/gl/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/os/gl/" AssemblerListingLocation="Debug/os/gl/" ProgramDataBaseFileName="Debug/os/gl/" BrowseInformationFile="Debug/os/gl/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\os\gl\gl_info.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/os/gl/" AssemblerListingLocation="Release/os/gl/" ProgramDataBaseFileName="Release/os/gl/" BrowseInformationFile="Release/os/gl/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/os/gl/" AssemblerListingLocation="Debug/os/gl/" ProgramDataBaseFileName="Debug/os/gl/" BrowseInformationFile="Debug/os/gl/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\os\gl\gl_state.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/os/gl/" AssemblerListingLocation="Release/os/gl/" ProgramDataBaseFileName="Release/os/gl/" BrowseInformationFile="Release/os/gl/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/os/gl/" AssemblerListingLocation="Debug/os/gl/" ProgramDataBaseFileName="Debug/os/gl/" BrowseInformationFile="Debug/os/gl/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	</Filter>
+	<Filter Name="os/net" Filter=""><File RelativePath="..\..\..\src\os\net\netcompat.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/os/net/" AssemblerListingLocation="Release/os/net/" ProgramDataBaseFileName="Release/os/net/" BrowseInformationFile="Release/os/net/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/os/net/" AssemblerListingLocation="Debug/os/net/" ProgramDataBaseFileName="Debug/os/net/" BrowseInformationFile="Debug/os/net/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\os\net\socket.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/os/net/" AssemblerListingLocation="Release/os/net/" ProgramDataBaseFileName="Release/os/net/" BrowseInformationFile="Release/os/net/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/os/net/" AssemblerListingLocation="Debug/os/net/" ProgramDataBaseFileName="Debug/os/net/" BrowseInformationFile="Debug/os/net/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	</Filter>
+	<Filter Name="os/snd" Filter=""><File RelativePath="..\..\..\src\os\snd\snd_system.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/os/snd/" AssemblerListingLocation="Release/os/snd/" ProgramDataBaseFileName="Release/os/snd/" BrowseInformationFile="Release/os/snd/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/os/snd/" AssemblerListingLocation="Debug/os/snd/" ProgramDataBaseFileName="Debug/os/snd/" BrowseInformationFile="Debug/os/snd/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	</Filter>
+	<Filter Name="phys" Filter=""><File RelativePath="..\..\..\src\phys\accessor.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/phys/" AssemblerListingLocation="Release/phys/" ProgramDataBaseFileName="Release/phys/" BrowseInformationFile="Release/phys/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/phys/" AssemblerListingLocation="Debug/phys/" ProgramDataBaseFileName="Debug/phys/" BrowseInformationFile="Debug/phys/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\phys\collisionQueue.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/phys/" AssemblerListingLocation="Release/phys/" ProgramDataBaseFileName="Release/phys/" BrowseInformationFile="Release/phys/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/phys/" AssemblerListingLocation="Debug/phys/" ProgramDataBaseFileName="Debug/phys/" BrowseInformationFile="Debug/phys/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\phys\engine.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/phys/" AssemblerListingLocation="Release/phys/" ProgramDataBaseFileName="Release/phys/" BrowseInformationFile="Release/phys/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/phys/" AssemblerListingLocation="Debug/phys/" ProgramDataBaseFileName="Debug/phys/" BrowseInformationFile="Debug/phys/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\phys\pairs.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/phys/" AssemblerListingLocation="Release/phys/" ProgramDataBaseFileName="Release/phys/" BrowseInformationFile="Release/phys/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/phys/" AssemblerListingLocation="Debug/phys/" ProgramDataBaseFileName="Debug/phys/" BrowseInformationFile="Debug/phys/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	</Filter>
+	<Filter Name="public/prototype" Filter=""><File RelativePath="..\..\..\src\public\prototype\prototype.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/public/prototype/" AssemblerListingLocation="Release/public/prototype/" ProgramDataBaseFileName="Release/public/prototype/" BrowseInformationFile="Release/public/prototype/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/public/prototype/" AssemblerListingLocation="Debug/public/prototype/" ProgramDataBaseFileName="Debug/public/prototype/" BrowseInformationFile="Debug/public/prototype/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	</Filter>
+	<Filter Name="res" Filter=""><File RelativePath="..\..\..\src\res\config.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/res/" AssemblerListingLocation="Release/res/" ProgramDataBaseFileName="Release/res/" BrowseInformationFile="Release/res/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/res/" AssemblerListingLocation="Debug/res/" ProgramDataBaseFileName="Debug/res/" BrowseInformationFile="Debug/res/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\res\res.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/res/" AssemblerListingLocation="Release/res/" ProgramDataBaseFileName="Release/res/" BrowseInformationFile="Release/res/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/res/" AssemblerListingLocation="Debug/res/" ProgramDataBaseFileName="Debug/res/" BrowseInformationFile="Debug/res/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\res\resource.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/res/" AssemblerListingLocation="Release/res/" ProgramDataBaseFileName="Release/res/" BrowseInformationFile="Release/res/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/res/" AssemblerListingLocation="Debug/res/" ProgramDataBaseFileName="Debug/res/" BrowseInformationFile="Debug/res/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\res\zstream.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/res/" AssemblerListingLocation="Release/res/" ProgramDataBaseFileName="Release/res/" BrowseInformationFile="Release/res/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/res/" AssemblerListingLocation="Debug/res/" ProgramDataBaseFileName="Debug/res/" BrowseInformationFile="Debug/res/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	</Filter>
+	<Filter Name="snd" Filter=""><File RelativePath="..\..\..\src\snd\sound_system.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/snd/" AssemblerListingLocation="Release/snd/" ProgramDataBaseFileName="Release/snd/" BrowseInformationFile="Release/snd/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/snd/" AssemblerListingLocation="Debug/snd/" ProgramDataBaseFileName="Debug/snd/" BrowseInformationFile="Debug/snd/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	</Filter>
+	<Filter Name="world" Filter=""><File RelativePath="..\..\..\src\world\geometry.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/world/" AssemblerListingLocation="Release/world/" ProgramDataBaseFileName="Release/world/" BrowseInformationFile="Release/world/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/world/" AssemblerListingLocation="Debug/world/" ProgramDataBaseFileName="Debug/world/" BrowseInformationFile="Debug/world/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\world\level.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/world/" AssemblerListingLocation="Release/world/" ProgramDataBaseFileName="Release/world/" BrowseInformationFile="Release/world/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/world/" AssemblerListingLocation="Debug/world/" ProgramDataBaseFileName="Debug/world/" BrowseInformationFile="Debug/world/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\world\quadtree.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/world/" AssemblerListingLocation="Release/world/" ProgramDataBaseFileName="Release/world/" BrowseInformationFile="Release/world/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/world/" AssemblerListingLocation="Debug/world/" ProgramDataBaseFileName="Debug/world/" BrowseInformationFile="Debug/world/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\world\world.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/world/" AssemblerListingLocation="Release/world/" ProgramDataBaseFileName="Release/world/" BrowseInformationFile="Release/world/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/world/" AssemblerListingLocation="Debug/world/" ProgramDataBaseFileName="Debug/world/" BrowseInformationFile="Debug/world/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	<File RelativePath="..\..\..\src\world\world_impl.cpp"><FileConfiguration Name="Release|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Release/world/" AssemblerListingLocation="Release/world/" ProgramDataBaseFileName="Release/world/" BrowseInformationFile="Release/world/"/>
+		</FileConfiguration>
+		<FileConfiguration Name="Debug|Win32"><Tool Name="VCCLCompilerTool" ObjectFile="Debug/world/" AssemblerListingLocation="Debug/world/" ProgramDataBaseFileName="Debug/world/" BrowseInformationFile="Debug/world/" BrowseInformation="1" DebugInformationFormat="3"/>
+		</FileConfiguration>
+		</File>
+	</Filter>
+	</Filter>
+		<Filter Name="Extra" Filter="">
+			<File RelativePath="..\..\..\src\os\conc_win32.cpp">
+			</File>
+			<File RelativePath="..\..\..\src\os\win32_errors.cpp">
+			</File>
+		</Filter>
+		<File RelativePath="..\..\win32-support\lib\libpngz.lib">
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

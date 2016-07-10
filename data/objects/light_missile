@@ -1,0 +1,26 @@
+light_missile = {
+    name =  "light_missile",
+    transform =  {0, 0, 0},
+    rotation =  {0, 0, 0, 1},
+    scale =  {1, 1, 1},
+    lod =  0,
+    subobjects =  { },
+    diffuse_color =  {0.8, 0.8, 0.8, 1},
+    ambient =  {0, 0, 0, 0},
+    emmision_color =  {0, 0, 0, 0},
+    specular_color =  {0.31624, 0.31624, 0.31624, 0},
+    shininess =  4.514,
+    texture =  "light_missile",
+
+    mesh = "light_missile",
+
+    speed = 250,
+    lifetime = 6.0,
+    damage = 10,
+    trail_size = 0.5,
+    engine_pos = {0, 0, 1.2},
+    sound = "missile_light",
+    exp_intensity = -0.5,
+    color = {1, .7, 0, 1},
+    light_radius = 20,
+}

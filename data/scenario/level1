@@ -1,0 +1,60 @@
+
+[start]
+goal1 = goto game_start
+
+[game_start]
+
+objects = game_start_buildings game_start_nature game_start_ships game_start_turrets
+goal1 = goto dest_kanyon
+
+[dest_kanyon]
+
+dialog = dest_kanyon_dialog
+objects = dest_kanyon_ships
+goal1 = timeout 300 prot_convoy
+goal2 = objects 0 game_start_turrets horny prot_convoy
+
+
+[prot_convoy]
+
+dialog = prot_convoy_dialog
+objects = prot_convoy_gvs prot_convoy_ships
+goal1 = objects 0 prot_convoy_gvs slick end
+goal2 = msg slick dest_reached dest_convoy
+
+
+[dest_convoy]
+
+dialog = dest_convoy_dialog
+
+objects = dest_convoy_gvs dest_convoy_ships
+goal1 = msg punkrocker dest_reached end
+goal2 = objects 0 dest_convoy_gvs punkrocker dest_village
+
+[dest_village]
+
+dialog = dest_village_dialog
+goal1 = objects 0 game_start_buildings punkrocker dest_village_1
+goal2 = objects 0 game_start_turrets punkrocker dest_village_2
+
+
+[dest_village_1]
+goal1 = objects 0 game_start_turrets punkrocker game_success
+
+[dest_village_2]
+goal1 = objects 0 game_start_buildings punkrocker game_success
+
+
+[game_success]
+
+dialog = game_success_dialog
+goal = goto end
+
+
+[game_fail]
+
+dialog = game_fail_dialog
+goal = goto end
+
+
+

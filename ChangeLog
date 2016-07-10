@@ -1,0 +1,88 @@
+
+Version 0.98.3 -
+
+ * Better window behaviour when resized.
+ * Networking functional, but need improvement regarding interface and
+   interaction with the gameplay
+ * Phys-engine reorg. now independent of object-hierarchy.
+ * .. and (start) of ai/world/snd-reorg.
+ * game/helpers.cpp splitup - first step towards a more general game-engine..
+
+
+Version 0.98.2 - 2002-09-25
+ * Cleanup of shadow system (could be even better)
+ * BUGFIX: Incorrect handling of textures larger than GL_MAX_TEXTURE_SIZE
+ * Removed glsdk from src/ext-directory (not used)
+ * Added glh (gl helper library)
+ * Added nvparse (nvidia parser library)
+ * Add extgen (gl extension definition file generator)
+ * Changed OpenGL extensions handling from homegrown to glh/extgen
+ * Dynamic environment mapping on the player's ship
+ * The autoconf setup is a bit less hackish
+ * Added GL-headers in src/GL - eliminates the need to adapt
+    to broken headers on various systems.
+ * Fixed a time leak in the mainloop
+ * Improved network-startup, better synchronization
+ * Compiles cleanly with gcc and
+    -ansi -pedantic -Wall -W -Wno-sign-compare -Wno-unused
+ * Changed use_texture to an int (texture_level), allowing 
+    a textured hud while object textures are turned off.
+
+
+Version 0.98.1 - 2002-05-04
+
+ * The gfx/physics/world/network-subsystems have been improved.
+
+ * Compiles with gcc versions prior to 3, without STLport.
+
+
+Version 0.98 - 2002-03-31
+
+ * Preloading of textures and objects should minimise
+   freezes during gameplay.
+
+ * A few objects added to the scenario.
+
+ * configure should detect more variations of GL-headers, 
+   and generally work a bit better, flags changed a bit,
+   see INSTALL
+
+
+Version 0.97 - 2002-03-11
+
+ * Sheeps!
+ * autoconf based building and installation (build/ac)
+ * major cvs-tree-cleanup:
+    doc/ cleanup
+    data/ cleanup
+     (A new cvs-module, reaper-content, contains everything related
+      to content-creation, and reaper/data should only contains
+      files needed to run the game)
+    Windows support libraries are now distributed separately
+     (http://www.dtek.chalmers.se/groups/reaper/dist/win32-support.zip)
+    spmake is moved to another cvs-tree
+     (zarquon.hemmet.chalmers.se:/usr/share/cvsroot spmake)
+ * changed commandline arguments to:
+     -h       help
+     -f       skip menu and go directly to game
+     -g       print all debug messages on stdout
+     -r <dir> use alternate reaper-root directory
+     -d <dir> use alternate data directory
+     -p <dir> use alternate plugin directory
+     module:variable=value    set a config-variable
+
+
+Version 0.96 - 2002-02-26
+ * Shadows
+ * Split-screen mode
+
+Version 0.95 - 2002-01-23
+
+Version 0.94 - 2002-01-22
+
+Version 0.93 - 2001-12-24
+
+Version 0.92 - 2001-11-04
+
+Version 0.91 - 2001-10-08 & 2001-10-05
+

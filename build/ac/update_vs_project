@@ -1,0 +1,105 @@
+#!/usr/bin/perl -w
+
+use strict;
+
+use XML::LibXML;
+use Data::Dumper;
+
+
+my $proj = shift;
+
+my $parser = new XML::LibXML;
+
+my $doc = $parser->parse_file($proj);
+
+
+sub inp {
+    my $fn = shift;
+    my %cts;
+    open FH, "<$fn";
+    while (<FH>) {
+        chomp;
+        my ($dir,$fs) = split (/	/);
+        $cts{$dir} = [ split (/ /, $fs) ];
+    }
+    close FH;
+    return \%cts;
+}
+
+sub mk_file_tree {
+    my ($srcs,$lbl,$exts,$configp) = @_;
+    my $se = $doc->createElement("Filter");
+    $se->setAttribute("Name",$lbl);
+    $se->setAttribute("Filter", $exts);
+    foreach my $d (sort keys %{$srcs}) {
+        my $de = $doc->createElement("Filter");
+        $de->setAttribute("Name", $d);
+        $de->setAttribute("Filter", "");
+        foreach my $f (sort @{$srcs->{$d}}) {
+            my $ee = $doc->createElement("File");
+            my $qd = $d;
+            $qd =~ s!/!\\!g;
+            my $fb = $f;
+            $fb =~ s/\.[^.]+$//;
+            $ee->setAttribute("RelativePath","..\\..\\..\\src\\$qd\\$f");
+            if ($configp) {
+                foreach my $cfg ("Release", "Debug") {
+                    my $ce = $doc->createElement("FileConfiguration");
+                    $ce->setAttribute("Name", "$cfg|Win32");
+                    my $tl = $doc->createElement("Tool");
+                    my @attrs = (
+                        [ "Name","VCCLCompilerTool" ],
+                        [ "ObjectFile", "${cfg}/$d/" ],
+                        [ "AssemblerListingLocation", "${cfg}/$d/" ],
+                        [ "ProgramDataBaseFileName", "${cfg}/$d/" ],
+                        [ "BrowseInformationFile", "${cfg}/$d/" ]);
+                    my @dbgattrs = (
+                        [ "BrowseInformation", "1" ],
+                        [ "DebugInformationFormat", "3" ]);
+                    map { $tl->setAttribute($_->[0], $_->[1]) }
+                        (@attrs, ($cfg eq "Debug") ? @dbgattrs : ());
+                     
+                    $ce->appendChild($tl);
+                    $ce->appendChild(XML::LibXML::Text->new("\n\t\t"));
+                    $ee->appendChild($ce);
+                    $ee->appendChild(XML::LibXML::Text->new("\n\t\t"));
+                }
+            } else {
+                $ee->appendChild(XML::LibXML::Text->new("\n\t"));
+            }
+            $de->appendChild($ee);
+            $de->appendChild(XML::LibXML::Text->new("\n\t"));
+        }
+
+        $se->appendChild($de);
+        $se->appendChild(XML::LibXML::Text->new("\n\t"));
+    }
+    return $se;
+}
+
+my $hdrs = &inp("reaper_headers");
+my $srcs = &inp("reaper_sources");
+
+my $he = mk_file_tree($hdrs, "Header Files", "h;hpp;hxx;hm;inl", 0);
+my $se = mk_file_tree($srcs, "Source Files", "cpp;c;cxx;rc;def;r;odl;idl;hpj;bat", 1);
+
+
+my $ns = $doc->find("*/child::Files");
+
+foreach my $f ($ns->get_nodelist()) {
+    my @fs = $f->getChildrenByTagName("Filter");
+
+    foreach my $flt (@fs) {
+        my $name = $flt->getAttribute("Name");
+        if ($name eq "Source Files") {
+            $f->replaceChild($se, $flt);
+        }
+        if ($name eq "Header Files") {
+            $f->replaceChild($he, $flt);
+        }
+    }
+}
+
+
+print $doc->toString();
+

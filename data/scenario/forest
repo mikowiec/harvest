@@ -1,0 +1,5 @@
+object: sim_tree
+matrix: [1, 0, 0, 0,  0, 1, 0, 0,  0, 0, 1, 0,  4000, 550, 3230, 1]
+id: 4247
+company: Nature
+

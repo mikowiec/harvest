@@ -1,0 +1,18 @@
+oldturret = {
+    name =  "turret_base",
+    transform =  {0, 0, 0},
+    rotation =  {0, 0, 0, 1},
+    scale =  {1, 1, 1},
+    parametric =  -1,
+    lod =  0,
+    subobjects =  {"turret"  },
+    diffuse_color =  {0.43223, 0.4608, 0.449439, 1},
+    ambient =  {0, 0, 0, 0},
+    emmision_color =  {0, 0, 0, 0},
+    specular_color =  {0, 0, 0, 1},
+    shininess =  0,
+    texture =  "test_turret",
+
+    mesh = "oldturret"
+}
+

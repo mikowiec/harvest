@@ -1,0 +1,17 @@
+mothership = {
+    name =  "body",
+    transform =  {0, 0, 0},
+    rotation =  {0, 0, 0, 1},
+    scale =  {1, 1, 1},
+    lod =  0,
+    subobjects =  {"exhausts"  },
+    diffuse_color =  {0.8, 0.8, 0.8, 1},
+    ambient =  {0, 0, 0, 0},
+    emmision_color =  {0, 0, 0, 0},
+    specular_color =  {0.33334, 0.33334, 0.33334, 0},
+    shininess =  8.7,
+    texture =  "mothership",
+
+    mesh = "mothership"
+}
+

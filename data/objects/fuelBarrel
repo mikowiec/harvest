@@ -1,0 +1,19 @@
+fuelbarrel = {
+    name =  "fuelbarrel",
+    transform =  {0, 0.576865, 0},
+    rotation =  {0, 0, 0, 1},
+    scale =  {1, 1, 1},
+    lod =  0,
+    subobjects =  { },
+    diffuse_color =  {1,1,1,1},
+    ambient =  {0.08548, 0.08548, 0.08548, 0},
+    emmision_color =  {0, 0, 0, 0},
+    specular_color =  {0.25642, 0.25642, 0.25642, 0},
+    shininess =  28.806,
+    texture =  "fuelBarrel",
+
+    mesh = "fuelbarrel",
+
+    hull_strength = 1
+}
+

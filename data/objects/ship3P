@@ -1,0 +1,4 @@
+ship3P = "objects/ship3"
+override = {
+    basename = "ship3"
+}

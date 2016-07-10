@@ -1,0 +1,21 @@
+
+object: shipXP
+matrix: [0, 0, -1, 0,  0, 1, 0, 0,  1, 0, 0, 0, 4290, 550, 3250, 1]
+id: 1
+company: Slick
+
+object: ship4P
+matrix: [0, 0, -1, 0,  0, 1, 0, 0,  1, 0, 0, 0, 4290, 550, 3200, 1]
+id: 2
+company: Slick
+
+object: ship3P
+matrix: [0, 0, -1, 0,  0, 1, 0, 0,  1, 0, 0, 0, 4290, 550, 3150, 1]
+id: 3
+company: Slick
+
+object: ship2P
+matrix: [0, 0, -1, 0,  0, 1, 0, 0,  1, 0, 0, 0, 4290, 550, 3100, 1]
+id: 4
+company: Slick
+

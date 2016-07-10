@@ -1,0 +1,19 @@
+
+main = { }
+
+rec = { record = true, fixed_dt = true }
+pb  = { playback = true, fixed_dt = true }
+
+net_base = { networked = true, fixed_dt = true, scenario = "none" }
+
+srv = net_base
+srv.server = true
+
+obs = net_base
+obs.objserver = true
+
+cli = net_base
+
+game = main
+
+

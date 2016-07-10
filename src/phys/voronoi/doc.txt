@@ -1,0 +1,233 @@
+Kollissionsdetektering
+
+I vår defintion av kollissionsdetektering ingår att finna de två
+punkterna närmast varandra på två objekt, samt normalen ut från
+objektet som respektive punkt ligger på .  
+
+Från de två punker kan sedan avståndet mellan de två objekten
+fastställas och om detta avstånd är under ett givet gränsvärde
+konstatera att objekten är så nära varandra att kollssion mellan
+objekten kan antas.  Om kollission antas kan punkten för kollission
+beräknas med hjälp av linjärinterpolering mellan paret av närmaste
+punkternas position.  De två normalerna behövs i ett senare skede
+fysikmotorn för att vid kollission beräkna reaktionskrafterna som
+uppstår.
+
+
+I spelet utgörs objekten som skall kollisionsdetekteras av polygoner,
+en vanlig representationsform inom datorgrafik.  Matematiskt kan
+objekten ses ha en yta utgjord av vertiser, öppna kanter och öppna
+polygon.  Dessa tre sorters primitiver kallar vi i sammanhanget för
+ytkomponenter.  En kant är vektor med given position i rymden och att
+den är öppen innebär att den inte innehåller sina ändpunkter.  En
+vertis är punkt på objektets yta där kanter möts.  En öppen polygon är
+en vanlig polygon som inte innehåller punkterna av dess angränsande
+kanter.
+
+Det är som regel för kostsamt att utömmande finna avståndet för varje
+par av ytobjekt från respektive objekt.  Det finns många sätt att
+approximera avståndet mellan två objekt och många baserar sig på mer
+och mindre avancerade hjälpgeometrier som omgärdar objektet
+(eng. "bounding object").  Genom att utföra kollssionsdetekteringen på
+hjälpgeometrierna får man då en undre gräns på avståndet mellan
+objekten och vid kollission förhoppningsvis en hjälplig approximation
+på normalerna ut från objekten i de två närmaste punkterna på
+respektive objekt.
+
+Sfärer
+
+I konstruktionen av spelet bestämde vi oss för att först implementera
+kollissionsdetekteringen med hjälp av den enklaste tänkbara omgärdande
+hjälpgeometrin, nämligen sfären.  Då sfären är så enkel av sin natur
+är det lätt att finna de närmaste punkterna på ytorna av två sfärer
+och vid kollission normalerna lika så.  Problemet med sfärer är att om
+objektet är avlångt så är det svårt att väl approximera objektets yta
+med hjälp av sfärer.  Således finns risken att den undre gränsen på
+avståndet mellan objekten är allt för litet, och kollission antas även
+då objekten i själva verket inte var särskilt nära varandra.
+
+Dessa enkla omgärdande objekt hade också funktionen att låta oss testa
+vårt ramverk för fysisk simulering och kollissionshantering, under
+utvecklingen av bättre omgärdande objekt.
+
+Det finns som tidigare nämnt inneboende problem med enkla omgärdande
+objekt för approximation av kollissionsdetektering.  Sfärer ger som
+tidigare nämnt ibland en dålig approximation av ytan på ett
+polygonobjekt och vidare är det inte möjligt att skala geometrin med
+tillgänglig datorkraft--oavsett hur snabb dator man har, går sfär
+approximationen inte att göra mer detaljerad.
+
+Detta problem uppstår med de flesta enkla omgärdande objekt och det
+finns olika sätt att avhjälpa situationen.  Ett sätt är att utnyttja
+en hierarki av enkla omgärdande objekt. T.ex. kan objektet omgärdas av
+en sfär.  När kollission med sfären uppstår, ersätts sfären med flera
+mindre sfärer som tillsammans omgärdar objektet, varpå
+kollisionsdetektering fortsättningsvis utförs mot samtliga sfärer på
+denna nya nivå.  När kollission uppstår med en av dessa sfärer kan
+ytterligare en nivå av omgärdande objekt ersätta den, och så vidare
+tills man når den önskade nivån av nogrannhet.  Denna teknik är
+användbar, men det är ändå svårt att få riktigt detaljerad
+kollissionsdetektering utan att ha hemskt många nivåer i sin hierarki.
+Dock kan denna teknik med en hierarki av omgärdande objekt utnyttjas
+tillsammans med de nedan nämnda mer sofistikerade omgärdande objektn,
+för att på så sätt uppnå mycket goda resultat utan nödvändigtvis allt
+för många nivåer i hierarkin. 
+
+Voronoi-objekt
+
+Allra bäst vore det om vi som omgärande objekt kunde utnyttja ett
+objekt med samma faktiska yta som det underliggande polygonobjektet.
+Problemet som då uppstår är som tidigare nämnt att för att hitta det
+närmaste avståndet mellan två sådana omgärdande objekt, så måste varje
+avståndet mellan varje par av ytkomponenter undersökas.  Detta är dock
+förutsatt att vi inte kan utnyttja information från tidigare utförd
+kollissionsdetektering för att snabba upp avståndskontrollen.
+
+Antag tills vidare att polygonobjekten som skall kollissionsdetekteras
+är konvexa, det vill säga saknar inbuktningar.  Om vi nu väljer ett
+omgärdande objekt med samma ytkomponenter, så som ovan beskrivet, som
+polygonobjektet har, så kan vi associera varje ytkomponent med en
+partion av rymden utanför det omgärande objektet, sådan att varje
+punkt i partitionen är närmare den ytkomponenten än någon annan
+ytkomponent på det omgärande objektet.  
+
+En partition som ovan beskriven kan beskrivas med hjälp av snittet av
+ett antal halvrymder, varav varje halvrymd kan representeras av ett
+plan sådant att punkterna i halvrymden ligger ovan planet.  För varje
+sådant plan associeras den angränande ytkomponenten i planets
+riktining.  Rymdpartitioner så som ovan beskrivet kallas i
+litteraturen för voronoiregioner.  Efter detta förarbete kan vi nu
+bestämma vilken ytkomponent en punkt ligger närmast på objektet på
+följande sätt.
+
+Börja med godtycklig ytkomponent.  Kontrollera om punkten ligger ovan
+varje plan i ytkomponentens rymdpartition.  Om så är fallet, så
+konstaterar vi att ytkomponenten är den närmaste till punkten.  Om
+inte, så håller vi reda på viket av planen som punkten låg "mest
+under", och fortsätter kontrollen på samma vis med den närmaste
+ytkomponenten i det planets riktning.  På det sättet närmar vi oss
+hela tiden den närmaste ytkomponenten på objektet.  Då kontrollen om
+en punkt ligger ovan ett plan är billig, finns goda möjligheter att
+algoritmen blir effektiv.
+
+Denna teknik kan förfinas så att vi kan hitta de två närmaste
+ytkomponenterna på två objekt.  Principen är att vi kontrollerar om
+den närmaste punkten på en ytkomponent A till en ytkomponent B, på ett
+annat objekt, ligger i B:s rymdpartition, och vice versa.  Om så är
+fallet så är dessa ytkomponenter de närmaste på objekten.  Om inte så
+ersäter vi ena ytkomponenten på ett av objekten med den angränsande
+ytkomponenten som verkar mest lovande och upprepar kontrollen tills
+kriteriet är uppfyllt.
+
+Då vi upprepade gånger kollisionsdetekterar samma par av objekt, vore
+det dumt att kasta bort informationen om vilket par av ytkomponenter
+som var närmast i senaste kollissionisdetekteringen.  Vi lagrar därför
+undan detta par, för att nästa gång, istället för att börja första
+kontrollen med två godtyckliga ytkomponenter, så börjar vi med de två
+tidigare närmaste ytkomponenterna.  Om objekten i fråga har rört sig
+lite är sannlikheten stor att vi inte behöver genomföra många
+kontroller för att utgånende från dessa ytkomponenter hitta de nu
+närmaste ytkomponenterna.  Att detta är viktigt kommer att framgå
+speciellt i avsnittet om objekthantering nedan.
+
+Normalerna ut från objektet för de olika ytkomponenterna kan beräknas
+i förväg och således direkt erhållas när kollission antas.
+
+Tyvärr är inte alla objekt konvexa i verkligheten och inte heller i
+applikationer av datorgrafik.  För att komma runt detta problem kan vi
+skapa en omgärdande konvext objekt för våra polygonobjekt.  Dessa
+objekt kan göras godtyckligt detaljerade, ända ner till objektets
+konvexa hölje, allt efter hur mycket datorkraft som finns
+tillgängligt.  Om denna detaljnivå inte räcker, är det ofta möjligt
+att göra en partitionering av objektet så att en hierarki
+innehållandes de konvexa höljena till det olika partitionerna väl
+approximerar objektet utan att använda särskilt många nivåer i
+hierarkin.
+
+Tyvärr har vi inte lyckats färdigställa kollissionsdetektering med
+voronoiregioner ännu, på grund av tidsbrist.  Då vi skall fortsätta
+projektet som en projektkurs under nästa år, är planen att då också
+färdigställa algoritmen.  Tills vidare utnyttjar vi bara sfärer.
+
+Objektshantering
+
+I världen finns, ur kollisionsdetekeringens perspektiv, fyra stycken
+kategorier av objekt: dynamiska objekt, statiska objekt, projektiler
+och trianglarna som terrängen är uppbyggd av.  Vi är intresserade av
+att detektera kollsisions, som ovan beskrivet, mellan par av objekt
+från samtliga kategorier.  
+
+En enkel modell för att upptäcka kollission mellan objekt är att 
+med korta mellanliggande tidsintervall kontrollera varje par av
+objekt.  Om kollission kan antas, så skall åtgärder vidtas, så som
+nedan beskrivet.  Denna metod kan dock förfinas åtskilligt.
+
+Då de olika objekten har olika fysikaliska egenskaper, sådana som
+hastighet och maxacceleration, så är det möjligt att sätta en undre
+gräns på tiden tills kollission mellan två objekt är möjlig.  Genom
+att lagra alla par av objekt i en prioritetskö med en prioritet omvänt
+proportionell mot den undre gräns som prioritet, så har vi alltid
+snabb tillgång till det par av objekt som tidigast kan kollidera.
+
+Då objekt är nära varandra kommer den nya undre gränsen att vara
+liten, vilket leder till att kollission mellan samma par av objekt
+kommer att övervägas ofta.  Dock desto oftare kollission övervägs,
+desto mindre hinner objekten förflytta sig och rotera mellan varje
+kontroll.  På så sätt kommer vi få stor nytta av att kunna utgå från
+det tidigare beräknade närmaste paret av ytkomponenter, så som ovan
+beskrivet, ty sannolikt har paret inte förändrats under ett kort
+tidsintervall eller i alla fall inte mycket.
+
+Om detta första par som kan komma att kollidera inte har möjlighet att
+kollidera före uppritandet av nästa skärmbild så behöver vi inte
+kontrollera kollission mellan några par av objekt.  Vi kan alltså
+simulera varje objekts rörelse fram till uppritandet av nästa
+skärmbild utan att överväga eventuella kollissioner.  Om det paret som
+härnäst kan komma att kollidera har en undre gräns på tiden till denna
+kollission tidigare än uppritandet av nästa skärm, så hämtas det paret
+ut från prioritetskön och simuleras fram till denna undre gräns och
+kontrolleras för kollission.  Om objekten har kolliderat hanteras
+detta, objektens fysikaliska egenskaper uppdateras, varpå, om båda
+objekten överlevde kollissionen, en ny undre gräns på tiden till nästa
+möjliga kollission beräknas och paret på nytt sätts in i
+prioritetskön.  På detta sätt slipper vi med hög sannolikhet överväga
+kollission mellan en majoritet av par av objekt i världen mellan
+uppritandet av två skärmar.
+
+
+En annan intressant observation är att alla objekt kan inte kollidera
+med alla objekt.  Statiska objekt kan inte förflytta sig i världen,
+och således inte kollidera med andra statiska objekt.  Därför övervägs
+aldrig sådana kollissioner.  
+
+Att undersöka kollission mellan varje icket statiskt objekt och varje
+triangel i terrängen vore kostsamt bortom praktisk tillämpning.  Efter
+varje skärmuppritning så börjar vi överväger för varje dynamiskt
+objekt kollission med alla trianglar i terrängen som möjligen kan nås
+av objektet innan nästa skärmuppritning.  Så fort som en ny beräknad
+undre gräns på tiden till kollissionen mellan ett dynamiskt objekt och
+en triangel överstiger tiden till nästa skärmuppritning, så övervägs
+inte kollission med den triangeln igen fören nästa gång skeppet kommer
+nära triangeln.
+
+Projektiler är speciella på så sätt att de ej ändrar riktning.  Detta
+gör att vi redan vid skapandet av en ny projektil vet vilka trianglar
+i världen och statiska objekt som är aktuella för kollission med
+projektilen och endast överväger kollission med dessa under
+projektilens livstid.  En annan konsekvens är att vi ofta kraftigt kan
+begränsa antalet dynamiska objekt som en projektilen kan kollidera
+med.  Utgående från de dynamiska objektens hastighet och
+maxacceleration kan vi beräkna vilka som har möjlighet att nå en punkt
+på projetilens färdlinje innan projektilen själv hinner dit.
+
+I objekthanteringen ingår också att när nya objekt tillförs världen,
+att börja överväga kollission med objekt även för dessa par med andra
+objekt, enligt ovan. 
+
+
+
+ 
+
+
+
+

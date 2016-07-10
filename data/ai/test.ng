@@ -1,0 +1,11 @@
+# Graph data for the navigation graph used by the pathfinder
+
+nr_of_nodes: 2
+
+node: 0
+point: [100,100,100]
+link1: [0,10,1]
+
+node: 1
+point: [100,100,110]
+link1: [0, 10, 0]

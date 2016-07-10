@@ -1,0 +1,12 @@
+
+# dsound | openal | simple | dummy
+
+music = simple
+sound = openal
+
+
+# DirectSound3D | DirectSound | Wave
+
+openal_context = DirectSound3D
+
+

@@ -1,0 +1,31 @@
+ground_vehicle = {
+    name =  "body",
+    transform =  {0, 0, 0},
+    rotation =  {0, 0, 0, 1},
+    scale =  {1, 1, 1},
+    lod =  0,
+    subobjects =  { },
+    diffuse_color =  {0.8, 0.8, 0.8, 1},
+    ambient =  {0, 0, 0, 0},
+    emmision_color =  {0, 0, 0, 0},
+    specular_color =  {0.9829, 0.9829, 0.9829, 0},
+    shininess =  29.644,
+    texture =  "ground_vehicle",
+
+    mesh = "ground_vehicle",
+
+
+    min_thrust = 0,
+    max_thrust = 45000,
+    mass = 10000,
+    max_accel = 20,
+    max_vel = 180,
+    drag = 3000,
+    max_yaw_rate = 10,
+    damage = 1,
+    health = 15,
+    shield = 5,
+    shield_recharge = 0.2,
+    alt = 10
+
+}

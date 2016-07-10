@@ -1,0 +1,11 @@
+!!RC1.0
+{
+rgb {
+	spare0 = col0.a * tex0;
+	spare1 = col1 * tex1;
+    }
+}
+
+final_product = spare0 * col0;
+out.rgb = spare1 * col0 + final_product;
+out.a = unsigned_invert(zero);

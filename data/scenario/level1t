@@ -1,0 +1,15 @@
+
+[start]
+goal1 = goto game_start
+
+[game_start]
+
+objects = game_start_buildings game_start_nature game_start_ships game_start_turrets
+goal1 = goto dest_kanyon
+
+[dest_kanyon]
+
+dialog = dest_kanyon_dialog
+objects = dest_kanyon_ships
+goal1 = goto end
+

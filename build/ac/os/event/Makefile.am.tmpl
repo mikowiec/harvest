@@ -1,0 +1,23 @@
+
+rp_src_dir=$(top_srcdir)/../../src/
+
+libos_event_la_CXXFLAGS=-prefer-non-pic
+
+noinst_LTLIBRARIES = libos_event.la
+
+libos_event_la_SOURCES = 
+
+
+pkglib_LTLIBRARIES = @event_plugins@
+
+mod_opts = -module -avoid-version -rpath $(pkglibdir)
+
+event_x11_la_SOURCES = $(rp_src_dir)/os/event/event_x11.cpp \
+                       $(rp_src_dir)/os/event/event_prim.cpp \
+                       $(rp_src_dir)/os/time_types.cpp
+event_x11_la_CXXFLAGS = $(cxxflags)
+event_x11_la_LDFLAGS = $(mod_opts) $(X11_LIBS)
+
+
+EXTRA_LTLIBRARIES = event_x11.la
+

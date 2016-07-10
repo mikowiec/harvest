@@ -1,0 +1,28 @@
+turret = {
+    name =  "base",
+    transform =  {0, 0, 0},
+    rotation =  {0, 0, 0, 1},
+    scale =  {1, 1, 1},
+    parametric =  -1,
+    lod =  0,
+    subobjects =  {"ball"  },
+    diffuse_color =  {1,1,1,1},
+    ambient =  {0, 0, 0, 0},
+    emmision_color =  {0, 0, 0, 0},
+    specular_color =  {.5, .5, .5, 1},
+    shininess =  60,
+    texture =  "turret",
+
+    mesh = "turret",
+
+    health = 3,
+    shield = 3,
+    shield_recharge = 0.1,
+    damage = 1,
+    max_rate_of_yaw = 360,
+    max_rate_of_pitch = 40,
+    barrel_name = "turret_ball_barrel",
+    rate_of_fire = 5,
+    pos1 = { 0.0, 0.0, -3.8}
+
+}

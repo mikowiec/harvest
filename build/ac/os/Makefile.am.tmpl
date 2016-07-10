@@ -1,0 +1,24 @@
+
+SUBDIRS = net gfx event snd gl
+
+rp_src_dir=$(top_srcdir)/../../src/
+
+libos_la_CXXFLAGS=-prefer-non-pic
+
+noinst_LTLIBRARIES = libos.la @THREAD_LIB@
+
+libos_la_SOURCES = 
+
+
+pkglib_LTLIBRARIES = 
+
+mod_opts = -module -avoid-version -rpath $(pkglibdir)
+
+libconc_pthreads_la_SOURCES = $(rp_src_dir)/os/conc_pthread.cpp
+libconc_pthreads_la_CXXFLAGS = $(cxxflags)
+libconc_win32_la_SOURCES = $(rp_src_dir)/os/conc_win32.cpp $(rp_src_dir)/os/win32_errors.cpp
+libconc_win32_la_CXXFLAGS = $(cxxflags)
+
+
+EXTRA_LTLIBRARIES = libconc_pthreads.la libconc_win32.la
+

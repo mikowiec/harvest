@@ -1,0 +1,49 @@
+
+level1 = {
+
+    sky = {
+        texture = "sky_blue",
+        color = {0,0,1},
+        altitude = 1200,
+        density = 1.5
+    },
+
+    fog = {
+        color = {0.5, 0.5, 0.7},
+        length = 2000,
+        density = 0.0004,
+        type = "linear"
+    },
+
+    terrain = {
+        mesh = "terrain2",
+        main_texture = "main",
+        detail_texture = "test_detail",
+        detail_repeats = 800,
+        dimensions = {
+            min_x = -5300,
+            max_x =  5300,
+            min_z = -5300,
+            max_z =  5300
+        },
+    },
+
+    lakes = {
+        { mesh = "test_lake", texture = "caust", wave_dir = {1,0,0}, amplitude = 1 }
+    },
+
+    lights = {
+        {
+            global = true,
+            position = {0, 1, 0},
+            specular = {1, 1, 0.97, 0},
+            diffuse  = {1, 1, 0.97, 0},
+            ambient  = {0.1, 0.1, 0.1, 0},
+            const_att = 2
+        }
+    },
+
+    scenario = "level1"
+
+}
+

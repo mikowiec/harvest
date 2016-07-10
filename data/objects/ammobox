@@ -1,0 +1,20 @@
+ammobox = {
+    name = "ammobox",
+    transform = {-0.00220926, 0.0387037, 0.00233622},
+    rotation = {0, 0, 0, 1},
+    scale = {1, 1, 1},
+    lod =  0,
+    subobjects = { },
+    diffuse_color = {0.4, 0.4, 0.4, 1},
+    ambient = {0, 0, 0, 0},
+    emmision_color = {0, 0, 0, 0},
+    specular_color = {0, 0, 0, 1},
+    shininess = 0,
+    texture = "ammo",
+
+    mesh = "ammobox",
+
+
+    hull_strength = 1
+}
+

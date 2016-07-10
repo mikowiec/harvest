@@ -1,0 +1,3 @@
+
+The files bison.exe, bison.simple, and flex.exe are covered by the GPL.
+All other files in this distribution can be used however you want.

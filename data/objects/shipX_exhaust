@@ -1,0 +1,17 @@
+shipX_exhaust = {
+    name =  "exhaust",
+    transform =  {0, 0, 0},
+    rotation =  {0, 0, 0, 1},
+    scale =  {1, 1, 1},
+    lod =  0,
+    subobjects =  {"engine_glow"  },
+    diffuse_color =  {1, 1, 1, 1},
+    ambient =  {0, 0, 0, 0},
+    emmision_color =  {0, 0, 0, 0},
+    specular_color =  {1, 1, 1, 0},
+    shininess =  20,
+    texture =  "ship_x_outline",
+
+    mesh = "shipX_exhaust"
+}
+

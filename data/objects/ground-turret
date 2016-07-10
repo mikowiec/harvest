@@ -1,0 +1,18 @@
+ground_turret = {
+    name =  "body",
+    transform =  {0, 0, 0},
+    rotation =  {0, 0, 0, 1},
+    scale =  {1, 1, 1},
+    parametric =  -1,
+    lod =  0,
+    subobjects =  {"ball"  },
+    diffuse_color =  {0.8, 0.8, 0.8, 1},
+    ambient =  {0, 0, 0, 0},
+    emmision_color =  {0, 0, 0, 0},
+    specular_color =  {0.9829, 0.9829, 0.9829, 0},
+    shininess =  29.644,
+    texture =  "ground_turret",
+
+    mesh = "ground_turret"
+}
+

@@ -1,0 +1,6 @@
+
+[start]
+goal1 = goto game_start
+
+[game_start]
+objects = game_start_ships_small

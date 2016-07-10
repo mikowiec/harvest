@@ -1,0 +1,221 @@
+
+#include "os/compat.h"
+
+#include "game/level.h"
+#include "gfx/io.h"
+
+#include "res/res.h"
+
+#include <functional>
+#include <iostream>
+
+#include "misc/parse.h"
+
+#include "misc/parse.h"
+#include "res/config.h"
+#include "res/resource.h"
+#include "os/debug.h"
+
+#include "res/urr.h"
+
+namespace reaper {
+namespace {
+reaper::debug::DebugOutput dout("game::level",5);
+}
+namespace game {
+
+using namespace std;
+using namespace res;
+using gfx::Color;
+
+class LevelCreate : public NodeConfig<ConfigEnv>
+{
+	Ptr load(IdentRef id) {
+		return resource_ptr<ConfigEnv>("levels/" + id);
+	}
+
+public:
+	Ptr create(IdentRef id) {
+		Ptr p = load(id + ".rl");
+		if (p->empty())
+			p = load(id);
+		return p->empty() ? Ptr(0) : p;
+	}
+};
+
+using namespace res::urr;
+
+template<class R>
+void try_descend(R& r, string n, string s)
+{
+	if (! r->descend(s))
+		throw level_error(string("section ") + s + " not found in level: " + n);
+}
+		
+
+LevelInfo::LevelInfo(const string &n)
+ : name(n)
+{
+	try {
+		std::auto_ptr< res::urr::Urr > lvl(res::urr::mk("levels/"+n));
+		std::auto_ptr< res::urr::Reader > rd(lvl->reader());
+
+		try_descend(rd, n, "sky");
+		sky_texture = get<std::string>(rd, "texture");
+		get_vec(rd, "color", sky_color, 3);
+		sky_altitude = get<float>(rd, "altitude");
+		sky_width    = get<float>(rd, "density");
+		rd->up();
+
+		if (rd->descend("fog")) {
+			get_vec(rd, "color", fog_color, 3);
+			fog_length = get<float>(rd, "length");
+			fog_density = get<float>(rd, "density");
+			string ftype = get<string>(rd, "type");
+			if (ftype == "linear")
+				fog_type = Linear;
+			else if (ftype == "exp")
+				fog_type = Exp;
+			else if (ftype == "exp2")
+				fog_type = Exp_2;
+			else
+				throw level_error("invalid fog type: " + ftype);
+			rd->up();
+		} else {
+			fog_type = NoFog;
+		}
+
+		try_descend(rd, n, "terrain");
+		terrain_mesh = get<string>(rd, "mesh");
+		terrain_main_texture   = get<string>(rd, "main_texture");
+		terrain_detail_texture = get<string>(rd, "detail_texture");
+		terrain_detail_size    = get<float>(rd, "detail_repeats");
+
+		try_descend(rd, n, "dimensions");
+
+		terrain_min_x = get<float>(rd, "min_x");
+		terrain_min_z = get<float>(rd, "min_z");
+		terrain_max_x = get<float>(rd, "max_x");
+		terrain_max_z = get<float>(rd, "max_z");
+
+		rd->up();
+		rd->up();
+
+		if (rd->descend("lakes")) {
+			do {
+				rd->descend();
+				Lake lake;
+				lake.mesh = get<string>(rd, "mesh");
+				lake.texture = get<string>(rd, "texture");
+				get_vec(rd, "wave_dir", lake.wave_dir, 3);
+				lake.amplitude = get<float>(rd, "amplitude");
+				lakes.push_back(lake);
+				rd->up();
+			} while (rd->next());
+			rd->up();
+		}
+
+		if (rd->descend("lights")) {
+			do {
+				rd->descend();
+				Light light;
+				get_vec(rd, "position", light.pos, 3);
+				if (get_vec(rd, "direction", light.dir, 3, Vector(0,0,-1))) {
+					light.exponent = get<float>(rd, "exponent");
+					light.angle = get<float>(rd, "angle");
+				} else {
+					light.exponent = 0;
+					light.angle = 180;
+				}
+				get_vec(rd, "ambient", light.ambient, 4, Color(0,0,0,1));
+				get_vec(rd, "diffuse", light.diffuse, 4, Color(0,0,0,1));
+				get_vec(rd, "specular", light.specular, 4, Color(0,0,0,1));
+				light.const_att = get<float>(rd, "const_att", 1.0);
+				light.linear_att = get<float>(rd, "linear_att", 0.0);
+				light.quadratic_att = get<float>(rd, "quadratic_att", 0.0);
+				light.global = get<bool>(rd, "global");
+				lights.push_back(light);
+				rd->up();
+			} while (rd->next());
+			rd->up();
+		}
+
+		scenario = get<string>(rd, "scenario");
+		
+
+	}
+	catch (const resource_not_found& e) {
+		throw level_error(string("LevelInfo: ") + name + " not found!  " + e.what());
+	}
+}
+
+template<class V>
+std::string vec_str(V v, int n)
+{
+	std::string s("{");
+	for (int i = 0; i < n-1; ++i) {
+		s += write<float>(v[i]) + ", ";
+	}
+	s += write<float>(v[n-1]) + "}";
+	return s;
+}
+
+/* TODO: write a generic urr-table-dump formatter. */
+
+void LevelInfo::save(const std::string &file) const
+{
+	std::string name = misc::basename_from_path(file);
+
+	res_out_stream os(File,"levels/"+file+".rl",true);
+
+	os << name << " = {\n"
+	   << "    sky = {\n"
+	   << "        texture  = \"" << sky_texture << "\",\n"
+	   << "        color    = " << vec_str(sky_color, 3) << ",\n"
+	   << "        altitude = " << sky_altitude << ",\n"
+	   << "        width    = " << sky_width << "\n"
+	   << "    },\n";
+	if (fog_type != NoFog) {
+		os << "    fog = {\n"
+		   << "        color  =  " << vec_str(fog_color, 3) << ",\n"
+		   << "        length =  " << fog_length << ",\n"
+		   << "        density = " << fog_density << ",\n"
+		   << "        type    = \"";
+		switch(fog_type) {
+		case Linear: os << "linear\"\n"; break;
+		case Exp:    os << "exp\"\n"; break;
+		case Exp_2:  os << "exp2\"\n"; break;
+		default: break;
+		}
+		os << "    },\n";
+	}
+
+	os << "    terrain = {\n"
+	   << "        mesh           = \"" << terrain_mesh << ",\n"
+	   << "        main_texture   = \"" << terrain_main_texture << ",\n"
+	   << "        detail_texture = \"" << terrain_detail_texture << ",\n"
+	   << "        detail_repeats = \"" << terrain_detail_size << ",\n"
+	   << "        dimensions = = {\n"
+	   << "            min_x = " << terrain_min_x << ",\n"
+	   << "            min_x = " << terrain_max_x << ",\n"
+	   << "            min_x = " << terrain_min_z << ",\n"
+	   << "            min_x = " << terrain_max_z << "\n"
+	   << "        },\n";
+
+	os << "    lakes = {\n";
+	for (int i = 0; i < lakes.size(); ++i) {
+		os << "{ mesh = \"" << lakes[i].mesh
+		   << "\", texture = \"" << lakes[i].texture
+		   << "\", wave_dir = " << vec_str(lakes[i].wave_dir, 3)
+		   << ", amplitude = " << lakes[i].amplitude
+		   << "},\n";
+	}
+	// TODO: lights
+
+	os << "    scenario = \"" << scenario << "\"\n";
+}
+
+}
+}
+
+

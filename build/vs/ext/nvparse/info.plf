@@ -1,0 +1,14 @@
+
+$ship = 1;
+
+$name = "nvparse";
+$type = "lib";
+$technique = "";
+@dependencies = (
+		 "/include/glh",
+		 "/include/shared/nvparse.h",
+		 "/lib/Debug/nvparse.lib",
+		 "/lib/Release/nvparse.lib",
+		);
+
+1;

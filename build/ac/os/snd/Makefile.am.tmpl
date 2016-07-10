@@ -1,0 +1,45 @@
+
+rp_src_dir=$(top_srcdir)/../../src/
+
+libos_snd_la_CXXFLAGS=-prefer-non-pic
+
+noinst_LTLIBRARIES = libos_snd.la
+
+libos_snd_la_SOURCES = 
+
+
+pkglib_LTLIBRARIES = @snd_plugins@
+
+mod_opts = -module -avoid-version -rpath $(pkglibdir)
+
+snd_dummy_la_SOURCES = $(rp_src_dir)/os/snd/snd_dummy.cpp
+snd_dummy_la_CXXFLAGS = $(cxxflags)
+snd_dummy_la_LDFLAGS = $(mod_opts)
+
+snd_wave_la_SOURCES = $(rp_src_dir)/os/snd/snd_wave.cpp \
+		      $(rp_src_dir)/main/exceptions.cpp
+snd_wave_la_CXXFLAGS = $(cxxflags)
+snd_wave_la_LDFLAGS = $(mod_opts)
+
+snd_mp3_la_SOURCES = $(rp_src_dir)/os/snd/snd_mp3.cpp
+snd_mp3_la_CXXFLAGS = $(cxxflags)
+snd_mp3_la_LDFLAGS = $(mod_opts) ../../ext/libmpegsound.la
+
+snd_simple_la_SOURCES = $(rp_src_dir)/os/snd/snd_simple.cpp \
+                        $(rp_src_dir)/os/snd/snd_simple_impl.cpp \
+                        $(rp_src_dir)/os/time_types.cpp \
+		        $(rp_src_dir)/main/exceptions.cpp
+snd_simple_la_CXXFLAGS = $(cxxflags)
+snd_simple_la_LDFLAGS = $(mod_opts)
+
+if OPENAL
+snd_openal_la_SOURCES = $(rp_src_dir)/os/snd/snd_openal.cpp
+snd_openal_la_CXXFLAGS = $(OPENAL_FLAGS) $(cxxflags)
+snd_openal_la_LDFLAGS = $(mod_opts)  $(OPENAL_LIBS)
+snd_openal = snd_openal.la
+endif
+
+EXTRA_LTLIBRARIES = snd_dummy.la snd_wave.la \
+		    $(snd_openal) \
+                    snd_mp3.la snd_simple.la
+

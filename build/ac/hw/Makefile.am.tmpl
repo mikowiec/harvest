@@ -1,0 +1,57 @@
+
+rp_src_dir=$(top_srcdir)/../../src/
+
+libhw_la_CXXFLAGS=-prefer-non-pic
+
+noinst_LTLIBRARIES = libhw.la @THREAD_LIB@
+
+libhw_la_SOURCES = 
+
+
+pkglib_LTLIBRARIES = @build_plugins@
+
+mod_opts = -module -avoid-version -rpath $(pkglibdir)
+
+gfx_x11_la_SOURCES = $(rp_src_dir)/hw/gfx_x11.cpp \
+                     $(rp_src_dir)/hw/videomode.cpp
+gfx_x11_la_CXXFLAGS = $(cxxflags)
+gfx_x11_la_LDFLAGS = $(mod_opts) $(X11_LIBS_XF86VM)
+
+event_x11_la_SOURCES = $(rp_src_dir)/hw/event_x11.cpp \
+                       $(rp_src_dir)/hw/event_prim.cpp \
+                       $(rp_src_dir)/hw/time_types.cpp
+event_x11_la_CXXFLAGS = $(cxxflags)
+event_x11_la_LDFLAGS = $(mod_opts) $(X11_LIBS)
+
+snd_dummy_la_SOURCES = $(rp_src_dir)/hw/snd_dummy.cpp
+snd_dummy_la_CXXFLAGS = $(cxxflags)
+snd_dummy_la_LDFLAGS = $(mod_opts)
+
+snd_wave_la_SOURCES = $(rp_src_dir)/hw/snd_wave.cpp
+snd_wave_la_CXXFLAGS = $(cxxflags)
+snd_wave_la_LDFLAGS = $(mod_opts)
+
+snd_mp3_la_SOURCES = $(rp_src_dir)/hw/snd_mp3.cpp
+snd_mp3_la_CXXFLAGS = $(cxxflags)
+snd_mp3_la_LDFLAGS = $(mod_opts) ../ext/libmpegsound.la
+
+snd_simple_la_SOURCES = $(rp_src_dir)/hw/snd_simple.cpp \
+                        $(rp_src_dir)/hw/snd_simple_impl.cpp \
+                        $(rp_src_dir)/hw/time_types.cpp
+snd_simple_la_CXXFLAGS = $(cxxflags)
+snd_simple_la_LDFLAGS = $(mod_opts)
+
+snd_openal_la_SOURCES = $(rp_src_dir)/hw/snd_openal.cpp
+snd_openal_la_CXXFLAGS = $(OPENAL_FLAGS) $(cxxflags)
+snd_openal_la_LDFLAGS = $(mod_opts)  $(OPENAL_LIBS)
+
+libconc_pthreads_la_SOURCES = $(rp_src_dir)/hw/conc_pthread.cpp
+libconc_pthreads_la_CXXFLAGS = $(cxxflags)
+libconc_win32_la_SOURCES = $(rp_src_dir)/hw/conc_win32.cpp $(rp_src_dir)/hw/win32_errors.cpp
+libconc_win32_la_CXXFLAGS = $(cxxflags)
+
+
+EXTRA_LTLIBRARIES = gfx_x11.la event_x11.la snd_dummy.la snd_wave.la \
+                    snd_openal.la snd_mp3.la snd_simple.la \
+		    libconc_pthreads.la libconc_win32.la
+

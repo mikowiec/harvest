@@ -1,0 +1,26 @@
+heavy_missile = {
+    name =  "heavy_missile",
+    transform =  {0, 0, 0},
+    rotation =  {0, 0, 0, 1},
+    scale =  {1, 1, 1},
+    lod =  0,
+    subobjects =  { },
+    diffuse_color =  {1,1,1,1},
+    ambient =  {0, 0, 0, 0},
+    emmision_color =  {0, 0, 0, 0},
+    specular_color =  {0.2735, 0.2735, 0.2735, 0},
+    shininess =  6.19,
+    texture =  "heavy_missile",
+
+    mesh = "heavy_missile",
+
+    speed = 200,
+    lifetime = 8.0,
+    damage = 18,
+    trail_size = 0.8,
+    engine_pos = {0, 0, 1.2},
+    sound = "missile_heavy",
+    exp_intensity = 0,
+    color = {1, .2, 0, 1},
+    light_radius = 30,
+}

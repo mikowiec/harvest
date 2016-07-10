@@ -1,0 +1,18 @@
+turret_ball_barrel = {
+    name =  "barrel",
+    transform =  {0, 1.297, -0.081},
+    rotation =  {0, 0, 0, 1},
+    scale =  {1, 1, 1},
+    parametric =  1,
+    lod =  0,
+    subobjects =  { },
+    diffuse_color =  {1,1,1,1},
+    ambient =  {0, 0, 0, 0},
+    emmision_color =  {0, 0, 0, 0},
+    specular_color =  {.5, .5, .5, 1},
+    shininess =  80,
+    texture =  "turret",
+
+    mesh = "turret_ball_barrel"
+}
+

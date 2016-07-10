@@ -1,0 +1,54 @@
+#Settings file for the renderer
+
+[settings]
+
+draw_stats     = 0 #Amount of renderer statistics to display
+terrain_detail = 1 #Values ranging from 0 to 1
+object_detail  = 1
+maximum_view_distance = 3000 #Viewing distance in metres
+shadow_type    = 5 # 0 = none, 1 = blob local, 2 = blob ships, 
+                   # 3 = silhoette player / blob ship, 4 = silhouette ships
+ 		   # 5 = silhoette all
+environment_mapping = 1 # 0 = none, 1 = incremental updates (1 side/frame), 2 = full update 		  
+
+test_for_errors = true #enable this to trap gl errors in the code
+use_texturing = true
+use_lighting  = true
+use_fog       = true
+
+texture_scaling = 1    #Increase this value [1,2,4,8] to downscale textures
+texture_caching = true #Cache (compressed) textures to disk
+
+[rendering]
+
+draw_sky = true
+
+#the following are for debug purposes only
+draw_terrain   = true
+draw_water     = true
+draw_effects   = true
+draw_particles = true
+draw_shadows   = true
+draw_lights    = true
+
+[extensions]
+
+#enable/disable use of OpenGL-extensions (if they are supported)
+
+use_arb_multitexturing: true
+use_arb_texture_compression: true
+use_arb_texture_cube_map: true
+use_arb_texture_env_combine: true
+use_ext_s3tc_texture_compression: true
+use_ext_separate_specular_color: true
+use_ext_secondary_color: true
+use_nv_fog_distance: true
+use_nv_vertex_array_range: true
+use_nv_vertex_array_range2: true
+use_nv_register_combiners: true
+use_sgis_generate_mipmap: true
+
+use_opengl_1_2: true
+
+use_ext_compiled_vertex_array: false #does not work currently
+use_nv_fence: false #does not work currently

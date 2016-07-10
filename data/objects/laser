@@ -1,0 +1,24 @@
+laser = {
+    name =  "laser",
+    transform =  {0, 0, 0},
+    rotation =  {0, 0, 0, 1},
+    scale =  {1, 1, 1},
+    lod =  0,
+    subobjects =  {},
+    diffuse_color =  {0, 0, 0, 1},
+    ambient =  {0, 1, 0, 0},
+    emmision_color =  {0, 0, 0, 0},
+    specular_color =  {0, 0, 0, 1},
+    shininess =  0,
+    texture = "",
+
+    mesh = "laser",
+
+    speed = 400,
+    lifetime = 3.0,
+    damage = .2,
+    color = {0, 1, 0, 1},
+    sound = "laser",
+    magic1 = -1.5,
+    light_radius = 5
+}

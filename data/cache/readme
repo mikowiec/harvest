@@ -1,0 +1,5 @@
+/data/cache directory
+
+All files in this directory can safely be removed at any time. They are created by the game at first startup and used later on to speed things up. 
+
+If you change a texture file (.png) you need to remove the corresponding .s3tc file to see the change in the game.

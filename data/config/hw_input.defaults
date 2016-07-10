@@ -1,0 +1,5 @@
+
+use_joystick = true
+joystick = hw_joystick_standard
+joystick_debug = false
+

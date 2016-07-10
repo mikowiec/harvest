@@ -1,0 +1,65 @@
+
+BUILDING
+========
+
+
+Windows:
+
+ Using Visual studio:
+
+   - Load build/vs/work/reaper.dsw, build everything.
+     Run reaper_demo
+
+   If you build from CVS, you need some support files/libraries:
+     http://www.dtek.chalmers.se/groups/reaper/dist/win32-support.zip
+   Unpack under build/vs.
+
+
+Unix:
+
+
+ NOTE: Development versions of libpng, zlib, xlib and OpenGL are needed.
+
+ Short version:
+    % cd build/ac
+    % ./configure
+    % make
+    % ./reaper
+
+ Notes: The configure script recognizes (in addition to the usual --prefix
+        and so on) the following options:
+
+        (compiler flags)
+        --enable-debug --enable-noopt --enable-opt[=arch]
+         
+        (include&library paths)
+        --with-x-includes --with-x-libraries
+        --with-png-headers --with-png-libs
+        --with-openal-headers --with-openal-libs
+        --with-stlport-headers --with-stlport-libs --with-stlport-libname
+  
+    If you need other flags, set CC, CXX, CFLAGS, CXXFLAGS and LDFLAGS
+    accordingly when running configure.
+
+
+ Example: (building in separate directory, using debug version of stlport
+           installed in /opt/stlport/include and /opt/stlport/lib, optimizing
+           for k6, installing in /opt/reaper)
+ % tar zxf .../reaper-0.98.tar.gz
+ % mkdir build
+ % cd build
+ % CXXFLAGS=-D_STLP_DEBUG ../reaper-0.98/build/ac/configure \
+    --prefix=/opt/reaper \
+    --with-stlport-headers=/opt/stlport/include \
+    --with-stlport-libs=/opt/stlport/lib \
+    --with-stlport-libname=stlport_gcc_stldebug \
+    --enable-opt=k6
+ % make
+ % make install
+ % /opt/reaper/bin/reaper
+
+
+
+Please report any problems to <reaper3d-devel@lists.sourceforge.net>
+
+

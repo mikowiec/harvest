@@ -1,0 +1,20 @@
+Name: b_box
+Transform: [0, 0.498013, 0.187487]
+Rotation: [0, 0, 0, 1]
+Scale: [18.0601, 4.89896, 8.654]
+SubObjects: [b_box_body b_box_lwing b_box_rwing  ]
+Name: b_box_body
+Transform: [0, 0.0874763, 0]
+Rotation: [0, 0, 0, 1]
+Scale: [0.143092, 0.663254, 0.98335]
+SubObjects: [ ]
+Name: b_box_lwing
+Transform: [0.271798, -0.127965, 0]
+Rotation: [0, 0, -0.332802, 0.942997]
+Scale: [0.557808, 0.301574, 0.573826]
+SubObjects: [ ]
+Name: b_box_rwing
+Transform: [-0.271798, -0.127965, 0]
+Rotation: [-0.332802, 0.942997, 2.03776e-017, 5.774e-017]
+Scale: [0.557808, 0.301574, -0.573826]
+SubObjects: [ ]

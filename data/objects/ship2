@@ -1,0 +1,47 @@
+ship2 = {
+    name =  "body",
+    transform =  {0, 0, 0},
+    rotation =  {0, 0, 0, 1},
+    scale =  {1, 1, 1},
+    lod =  0,
+    subobjects =  {"canopy", "guns", "thrusters"},
+    diffuse_color =  {1,1,1,1},
+    ambient =  {0, 0, 0, 0},
+    emmision_color =  {0, 0, 0, 1},
+    specular_color =  {1,1,1,1},
+    shininess =  10,
+    texture =  "ship",
+
+    mesh = "ship2",
+
+
+    min_thrust =  40000,
+    max_thrust = 260000,
+    afterburner = 1.4,
+    burn_rate = .2,
+    afterburner_recharge = .05,
+    mass = 5000,
+    max_accel = 40,
+    max_vel = 370,
+    drag = 1000,
+    rudder_drag = 1000,
+    max_yaw_rate = 50,
+    max_pitch_rate = 50,
+    max_roll_rate = 250,
+    damage_mult = 0,
+    health = 10,
+    shield = 10,
+    shield_recharge = 0.1,
+    engine_pos = {0, 0.2, 0.2},
+
+
+
+    rate_of_fire = 5,
+    pos1 = {-2.1, 0.325, -1.86},
+    pos2 = { 2.1, 0.325, -1.86},
+    pos3 = {-1.2, 0.325, -2.1},
+    pos4 = { 1.2, 0.325, -2.1},
+    pos5 = {-1.5, 0.325, -2.483},
+    pos6 = { 1.5, 0.325, -2.483}
+
+}

@@ -1,0 +1,76 @@
+
+#ifndef REAPER_EXT_COMPAT_MEMORY
+#define REAPER_EXT_COMPAT_MEMORY
+
+namespace std {
+
+
+template<class T>
+class auto_ptr {
+	template<class Y> struct auto_ptr_ref {
+		auto_ptr_ref(Y* p) : ptr(p) { }
+		Y* ptr;
+	};
+
+	T* ptr;
+public:
+	typedef T element_type;
+	
+	explicit auto_ptr(T* p = 0) throw() : ptr(p) { }
+	
+	template<class Y>
+	auto_ptr(auto_ptr<Y>& a) throw() { ptr = a.ptr; a.ptr = 0; }
+
+	auto_ptr(auto_ptr_ref<T> a) throw() { ptr = a.ptr; a.ptr = 0; }
+
+	auto_ptr(auto_ptr& a) throw() { ptr = a.ptr; a.ptr = 0; }
+
+	~auto_ptr() { delete ptr; }
+
+	template<class Y>
+	auto_ptr& operator=(auto_ptr<Y>& a) {
+		reset(a.release());
+		return *this;
+	}
+
+	auto_ptr& operator=(auto_ptr& a) {
+		reset(a.release());
+		return *this;
+	}
+
+	auto_ptr& operator=(auto_ptr_ref<T> a) {
+		reset(a.ptr);
+		return *this;
+	}
+
+	operator auto_ptr_ref<T>() { T* p = ptr; ptr = 0; return auto_ptr_ref<T>(p); }
+	
+	T* operator->() const { return ptr; }
+	T& operator*() const { return *ptr; }
+
+	T* release() {
+		T* p = ptr;
+		ptr = 0;
+		return p;
+	}
+    
+	void reset(T* p = 0) {
+		if (p != ptr) {
+			delete ptr;
+			ptr = p;
+		}
+	}
+
+	T* get() const {
+		return ptr;
+	}
+};
+
+
+
+
+}
+
+
+#endif
+

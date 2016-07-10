@@ -1,0 +1,18 @@
+base = {
+    name =  "base",
+    transform =  {0, 0, 0},
+    rotation =  {0, 0, 0, 1},
+    scale =  {1, 1, 1},
+    lod =  0,
+    subobjects =  { },
+    diffuse_color =  {1, 1, 1, 1},
+    ambient =  {0, 0, 0, 0},
+    emmision_color =  {0, 0, 0, 0},
+    specular_color =  {1, 1, 1, 1},
+    shininess =  80,
+    texture =  "base",
+
+    mesh = "base",
+
+    hull_strength = 5
+}

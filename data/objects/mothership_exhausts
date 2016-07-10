@@ -1,0 +1,17 @@
+mothership_exhausts = {
+    name =  "exhausts",
+    transform =  {0, 0, 0},
+    rotation =  {0, 0, 0, 1},
+    scale =  {1, 1, 1},
+    lod =  0,
+    subobjects =  {"engine_glow"  },
+    diffuse_color =  {0.280336, 0.280336, 0.280336, 1},
+    ambient =  {0, 0, 0, 0},
+    emmision_color =  {0, 0, 0, 0},
+    specular_color =  {0.92308, 0.92308, 0.92308, 0},
+    shininess =  46.396,
+    texture =  "mothership",
+
+    mesh = "mothership_exhausts"
+}
+

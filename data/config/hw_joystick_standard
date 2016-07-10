@@ -1,0 +1,19 @@
+
+[axis_0]
+
+min = 0
+max = 64000
+center = 32000
+dead = 1000
+sensitivity = 1000
+
+[axis_1]
+
+min = 0
+max = 64000
+center = 32000
+dead = 1000
+sensitivity = 1000
+
+
+

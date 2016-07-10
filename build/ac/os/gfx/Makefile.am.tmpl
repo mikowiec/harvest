@@ -1,0 +1,23 @@
+
+rp_src_dir=$(top_srcdir)/../../src/
+
+libos_gfx_la_CXXFLAGS=-prefer-non-pic
+
+noinst_LTLIBRARIES = libos_gfx.la
+
+libos_gfx_la_SOURCES = 
+
+
+pkglib_LTLIBRARIES = @gfx_plugins@
+
+mod_opts = -module -avoid-version -rpath $(pkglibdir)
+
+gfx_x11_la_SOURCES = $(rp_src_dir)/os/gfx/gfx_x11.cpp \
+		     $(rp_src_dir)/main/exceptions.cpp \
+                     $(rp_src_dir)/os/videomode.cpp
+gfx_x11_la_CXXFLAGS = $(cxxflags)
+gfx_x11_la_LDFLAGS = $(mod_opts) $(X11_LIBS_XF86VM)
+
+
+EXTRA_LTLIBRARIES = gfx_x11.la 
+

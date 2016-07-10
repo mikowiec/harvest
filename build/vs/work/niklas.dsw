@@ -1,0 +1,254 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "GLUI"=..\ext\GLUI\GLUI.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "hw_test_input"=..\test\hw\hw_test_input\hw_test_input.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "level_editor"=..\tools\level_editor\level_editor.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "navigraph_editor"=..\tools\navigraph_editor\navigraph_editor.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "obj_viewer_2"=..\tools\obj_viewer_2\obj_viewer_2.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "plugin_event_win32"=..\reaper\plugin_event_win32.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "plugin_gfx_win32"=..\reaper\plugin_gfx_win32.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "plugin_snd_dsound"=..\reaper\plugin_snd_dsound.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "plugin_snd_dummy"=..\reaper\plugin_snd_dummy.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "plugin_snd_mp3"=..\reaper\plugin_snd_mp3.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "plugin_snd_openal"=..\reaper\plugin_snd_openal.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "plugin_snd_simple"=..\reaper\plugin_snd_simple.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "plugin_snd_wave"=..\reaper\plugin_snd_wave.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "reaper"=..\reaper\reaper.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "reaper_demo"=..\public\reaper_demo\reaper_demo.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "reaper_export"=..\tools\reaper_export\reaper_export.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "test_ai"=..\test\ai\test_ai\test_ai.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "testing"=..\test\ai\testing\testing.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

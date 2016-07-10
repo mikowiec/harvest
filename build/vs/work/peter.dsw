@@ -1,0 +1,1019 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "GLUI"=..\ext\GLUI\GLUI.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "all"=..\test\hw\all\all.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name hw_test_event
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name hw_test_input
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name hw_test_snd
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name obj_viewer_2
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name test_gfx
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name test_obj
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name test_phys_5
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name testdebug0
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name testquad1
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name testquadtree0
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name testres0
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name testworld0
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name event_serv
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name test_config
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name test_server
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name test_world1
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name testquadterrain
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name reaper_demo
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name test_event_string
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name test_playmp3
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name test_playwav
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name mpegsound
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name mpegsound_static
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name mpegvideo
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name test_anim
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name test_playmp3_2
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name test_ai
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name test_directinput
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name test_font
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name test_pm
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name test_ship
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "event_serv"=..\test\hw\event_serv\event_serv.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name test_server
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "hw_test_event"=..\test\hw\hw_test_event\hw_test_event.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name plugin_event_win32
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "hw_test_init"=..\TEST\HW\hw_test_init\hw_test_init.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "hw_test_input"=..\test\hw\hw_test_input\hw_test_input.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "hw_test_snd"=..\test\hw\hw_test_snd\hw_test_snd.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name plugin_snd_dsound
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name plugin_snd_dummy
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name plugin_snd_mp3
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name plugin_snd_openal
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name plugin_snd_simple
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name plugin_snd_wave
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "level_editor"=..\tools\level_editor\level_editor.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name GLUI
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "mpegsound_static"=..\ext\mpegsound_static\mpegsound_static.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "mpegvideo"=..\ext\mpegvideo\mpegvideo.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "obj_viewer"=..\tools\obj_viewer\obj_viewer.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "obj_viewer_2"=..\tools\obj_viewer_2\obj_viewer_2.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "plugin_event_win32"=..\REAPER\plugin_event_win32.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "plugin_gfx_win32"=..\reaper\plugin_gfx_win32.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "plugin_snd_dsound"=..\reaper\plugin_snd_dsound.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "plugin_snd_dummy"=..\reaper\plugin_snd_dummy.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "plugin_snd_mp3"=..\reaper\plugin_snd_mp3.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name mpegsound_static
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "plugin_snd_openal"=..\reaper\plugin_snd_openal.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "plugin_snd_simple"=..\reaper\plugin_snd_simple.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "plugin_snd_wave"=..\reaper\plugin_snd_wave.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "prog"=..\..\spmake\prog.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "reaper"=..\reaper\reaper.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "reaper_demo"=..\public\reaper_demo\reaper_demo.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name plugin_event_win32
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name plugin_gfx_win32
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name plugin_snd_dsound
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name plugin_snd_dummy
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name plugin_snd_mp3
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name plugin_snd_openal
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name plugin_snd_simple
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name plugin_snd_wave
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "reaperspm"="..\..\spmake\reaper-spm.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "test_ai"=..\test\ai\test_ai\test_ai.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test_anim"=..\test\hw\test_anim\test_anim.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name mpegvideo
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test_config"=..\test\res\test_config\test_config.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test_decodemp3"=..\TEST\HW\test_decodemp3\test_decodemp3.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test_directinput"=..\test\hw\test_directinput\test_directinput.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "test_dynload0"=..\test\hw\test_dynload0\test_dynload0.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test_event_string"=..\test\hw\test_event_string\test_event_string.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test_font"=..\test\misc\test_font\test_font.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test_gfx"=..\test\gfx\test_gfx\test_gfx.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test_hash"=..\TEST\MISC\test_hash\test_hash.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test_hash0"=..\test\misc\test_hash0\test_hash0.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test_numperf1"=..\test\main\test_numperf1\test_numperf1.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test_numperf2"=..\TEST\MAIN\test_numperf2\test_numperf2.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test_obj"=..\test\object\test_obj\test_obj.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test_phys_5"=..\test\phys\test_phys_5\test_phys_5.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test_playmp3"=..\test\hw\test_playmp3\test_playmp3.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test_playmp3_2"=..\test\hw\test_playmp3_2\test_playmp3_2.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name plugin_snd_mp3
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name plugin_snd_simple
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test_playwav"=..\test\hw\test_playwav\test_playwav.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test_pm"=..\test\gfx\test_pm\test_pm.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test_progbar"=..\TEST\MISC\test_progbar\test_progbar.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test_scenario"=..\test\ai\test_scenario\test_scenario.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test_server"=..\test\net\test_server\test_server.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test_ship"=..\test\ai\test_ship\test_ship.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "test_snd"=..\test\snd\test_snd\test_snd.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test_sockstream0"=..\test\net\test_sockstream0\test_sockstream0.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test_terrain_read"=..\test\hw\test_terrain_read\test_terrain_read.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test_world1"=..\test\hw\test_world1\test_world1.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test_zlib"=..\test\res\test_zlib\test_zlib.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "testdebug0"=..\test\hw\testdebug0\testdebug0.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "testquad1"=..\test\world\testquad1\testquad1.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "testquadterrain"=..\test\world\testquadterrain\testquadterrain.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "testquadtree0"=..\test\WORLD\testquadtree0\testquadtree0.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "testres0"=..\test\RES\testres0\testres0.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "testworld0"=..\test\WORLD\testworld0\testworld0.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name reaper
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "testworld1"=..\test\world\testworld1\testworld1.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "testworld_all"=..\test\world\testworld_all\testworld_all.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+
